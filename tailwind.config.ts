@@ -29,6 +29,7 @@ const config = {
       lg: "32px",
     },
     borderRadius: {
+      sm: "10px",
       md: "20px",
       full: "9999px",
     },

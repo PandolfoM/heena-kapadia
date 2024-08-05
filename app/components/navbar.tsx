@@ -10,6 +10,10 @@ import Link from "next/link";
 function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  const handleClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className="min-h-[75px] flex flex-col justify-center items-center px-5 backdrop-blur bg-white/50 w-[90%] rounded-md mt-[5px] fixed left-1/2 right-1/2 -translate-x-1/2">
       <div className="w-full flex items-center justify-between h-nav">
@@ -29,7 +33,7 @@ function Navbar() {
             animate={{ height: "auto" }}
             exit={{ height: 0 }}
             className="flex flex-col gap-2 text-center text-md font-bold text-secondary pb-8">
-            <Link href="/">
+            <Link href="/" onClick={handleClick}>
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -38,7 +42,7 @@ function Navbar() {
                 Home
               </motion.p>
             </Link>
-            <Link href="/contact">
+            <Link href="/contact" onClick={handleClick}>
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -47,7 +51,7 @@ function Navbar() {
                 Contact
               </motion.p>
             </Link>
-            <Link href="/about">
+            <Link href="/about" onClick={handleClick}>
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
