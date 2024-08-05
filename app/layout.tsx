@@ -19,7 +19,7 @@ export default function RootLayout({
       <body
         className={`${raleway.className} h-full w-full flex flex-col relative`}>
         <Navbar />
-        <main className="h-full overflow-y-auto pt-[80px]">
+        <main className="h-full overflow-y-auto pt-[155px]">
           {children}
           <Footer />
         </main>

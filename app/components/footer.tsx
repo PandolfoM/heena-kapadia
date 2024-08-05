@@ -5,7 +5,7 @@ function Footer() {
     <footer className="w-full flex flex-col items-center justify-end gap-2 text-secondary/50 text-xs pt-[100px] pb-5">
       <div className="h-[2px] w-[75px] bg-secondary/50 rounded-full" />
       <div className="flex flex-col items-center justify-end">
-        <a href="tel:(203) 288-8006" className="underline hover:no-underline">
+        <a href="tel:2032888006" className="underline hover:no-underline">
           (203) 288-8006
         </a>
         <a
