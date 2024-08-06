@@ -15,11 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full w-full">
+    <html lang="en" className="h-full w-full m-0 p-0 overflow-hidden">
       <body
-        className={`${raleway.className} h-full w-full flex flex-col relative`}>
+        className={`${raleway.className} h-full w-full m-0 p-0 overflow-hidden flex flex-col relative`}>
         <Navbar />
-        <main className="h-full overflow-y-auto pt-[155px]">
+        <main className="h-full overflow-y-auto pt-[155px] flex-grow">
           {children}
           <Footer />
         </main>

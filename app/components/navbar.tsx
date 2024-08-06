@@ -34,7 +34,7 @@ function Navbar() {
             initial={{ height: 0 }}
             animate={{ height: "auto" }}
             exit={{ height: 0 }}
-            className="flex flex-col gap-2 text-center text-md font-bold text-secondary pb-8">
+            className="flex flex-col gap-2 text-center text-md font-bold text-secondary">
             <Link href="/" onClick={handleClick}>
               <motion.p
                 initial={{ opacity: 0 }}
@@ -58,7 +58,8 @@ function Navbar() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0, transition: { delay: 0.0 } }}
-                transition={{ delay: 0.3 }}>
+                transition={{ delay: 0.3 }}
+                className="pb-8">
                 About
               </motion.p>
             </Link>
