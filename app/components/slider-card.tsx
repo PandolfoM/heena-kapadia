@@ -73,7 +73,7 @@ function SliderCard({ cards }: Props) {
               alt=""
               className="object-center object-cover block rounded-sm duration-300 transition-all aspect-square w-[90%] h-[250px] m-auto shadow-[0_0_20px_1px] shadow-primary/50 absolute top-0 left-0 right-0 -translate-y-1/2"
             />
-            <div className="swiper-slide-content text-center flex flex-col gap-5 justify-between items-center overflow-hidden">
+            <div className="swiper-slide-content text-center flex flex-col gap-5 justify-between items-center overflow-visible">
               <span>
                 <h4 className="text-secondary/50 text-sm">{card.subtitle}</h4>
                 <h3 className="text-secondary text-md">{card.title}</h3>
@@ -81,7 +81,9 @@ function SliderCard({ cards }: Props) {
               <p className="text-xs h-max font-normal text-secondary/50 line-clamp-6">
                 {card.description}
               </p>
-              <Button className="bg-primary text-white">Read More</Button>
+              <Button className="bg-primary text-white shadow-[0_0_20px_1px] shadow-primary/50">
+                Read More
+              </Button>
             </div>
           </SwiperSlide>
         ))}

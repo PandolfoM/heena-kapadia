@@ -3,6 +3,12 @@ import SliderCard, { Card } from "../components/slider-card";
 import heena from "@/app/assets/heena.jpg";
 import carmen from "@/app/assets/carmen.jpg";
 import lynn from "@/app/assets/lynn.jpg";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const CARDS: Card[] = [
   {
@@ -46,6 +52,52 @@ function About() {
         </h1>
         <div className="w-full flex flex-col gap-1 font-bold text-secondary text-sm bg-primary p-5">
           <SliderCard cards={CARDS} />
+        </div>
+
+        <div className="w-full flex flex-col gap-1 font-bold text-secondary text-sm px-5">
+          <h3 className="text-md font-bold text-secondary">
+            Where we Practice
+          </h3>
+          <Accordion type="single" collapsible className="text-secondary">
+            <AccordionItem value="courts">
+              <AccordionTrigger>Courts</AccordionTrigger>
+              <AccordionContent>
+                <ul>
+                  <li>Connecticut Federal District Court</li>
+                  <li>New York Federal District Court</li>
+                  <li>Connecticut State Courts</li>
+                  <li>New York State Courts</li>
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="ct">
+              <AccordionTrigger>
+                Connecticut Administrative Agencies
+              </AccordionTrigger>
+              <AccordionContent>
+                <ul>
+                  <li>Commission on Human Rights and Opportunities</li>
+                  <li>Department of Labor</li>
+                  <li>Freedom of Information Commission</li>
+                  <li>Office of Public Hearings</li>
+                  <li>State Ethics Office</li>
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="federal">
+              <AccordionTrigger>
+                Federal Administrative Agencies
+              </AccordionTrigger>
+              <AccordionContent>
+                <ul>
+                  <li>Equal Employment Opportunities Commission</li>
+                  <li>Occupational Safety and Hazard Administration (OSHA)</li>
+                  <li>Office of Administrative Law Judges</li>
+                  <li>Office of Civil Rights</li>
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </div>
     </section>

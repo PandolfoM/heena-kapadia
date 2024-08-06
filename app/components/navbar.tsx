@@ -15,11 +15,13 @@ function Navbar() {
   };
 
   return (
-    <nav className="min-h-[75px] flex flex-col justify-center items-center px-5 backdrop-blur bg-white/50 w-[90%] rounded-md mt-[5px] fixed left-1/2 right-1/2 -translate-x-1/2">
+    <nav className="min-h-[75px] flex flex-col justify-center items-center px-5 backdrop-blur bg-white/50 w-[90%] rounded-md mt-[5px] fixed left-1/2 right-1/2 -translate-x-1/2 z-50">
       <div className="w-full flex items-center justify-between h-nav">
-        <p className={`${bitter.className} text-primary text-md font-bold`}>
+        <Link
+          href="/"
+          className={`${bitter.className} text-primary text-md font-bold`}>
           HEENA KAPADIA
-        </p>
+        </Link>
         <FontAwesomeIcon
           onClick={() => setIsOpen(!isOpen)}
           icon={faBars}
