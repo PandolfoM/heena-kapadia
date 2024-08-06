@@ -5,12 +5,12 @@ export default function Home() {
     <>
       <section className="flex flex-col justify-center items-center gap-[100px]">
         <div className="flex flex-col justify-center items-center gap-5 px-5">
-          <h1 className="font-bold text-xl text-secondary text-lg text-center">
+          <h1 className="font-bold text-xl text-secondary text-lg text-center dark:text-white">
             A Law Firm
             <br /> Dedicated Exclusively
             <br /> to Employees
           </h1>
-          <p className="text-secondary/50 text-center">
+          <p className="text-secondary/50 text-center dark:text-white/50">
             Working only for employees enables us to devote all our resources to
             protecting and advocating for you in these often-difficult
             situations.
@@ -32,7 +32,7 @@ export default function Home() {
             necessary to protect you and help you seek justice.
           </p>
           {/* Successes */}
-          <div className="bg-white/25 w-[300px] h-[250px] absolute -bottom-1/3 right-1/2 left-1/2 -translate-x-1/2 rounded-md text-center bg-clip-padding ">
+          <div className="w-[300px] h-[250px] absolute -bottom-1/3 right-1/2 left-1/2 -translate-x-1/2 rounded-md text-center bg-clip-padding ">
             <div className="bg-[#F2F2F2] p-5 rounded-md bg-clip-padding border-[10px] border-white/25">
               <h4 className="font-bold text-secondary text-lg">Successes</h4>
               <p className="font-bold text-secondary text-sm">$1,800,000</p>
@@ -52,7 +52,7 @@ export default function Home() {
         </div>
         {/* Areas of practice */}
         <div className="w-full px-5 pt-[150px]">
-          <div className="bg-secondary px-5 rounded-md py-5 flex flex-col gap-[10px]">
+          <div className="bg-secondary px-5 rounded-md py-5 flex flex-col gap-[10px] dark:bg-primary">
             <h3 className="text-white font-bold text-lg leading-tight text-center">
               Areas of Practice
             </h3>
@@ -60,18 +60,20 @@ export default function Home() {
               The Law Office of Heena Kapadia represents employees in a broad
               array of employment related matters.
             </p>
-            <div className="flex flex-col gap-[10px] dark">
-              <Button className="w-full text-sm">
+            <div className="flex flex-col gap-[10px]">
+              <Button className="w-full text-sm bg-primary dark:bg-secondary">
                 Employee Discrimination
               </Button>
-              <Button className="w-full text-sm">
+              <Button className="w-full text-sm bg-primary dark:bg-secondary">
                 Whistleblower Retaliation
               </Button>
-              <Button className="w-full text-sm">Wage and Hour Issues</Button>
-              <Button className="w-full text-sm">
+              <Button className="w-full text-sm bg-primary dark:bg-secondary">
+                Wage and Hour Issues
+              </Button>
+              <Button className="w-full text-sm bg-primary dark:bg-secondary">
                 Family Medical Leave Act
               </Button>
-              <Button className="w-full text-sm">
+              <Button className="w-full text-sm bg-primary dark:bg-secondary">
                 Other Areas of Practice
               </Button>
             </div>

@@ -76,10 +76,10 @@ function Contact() {
   return (
     <section className="flex flex-col justify-center items-center gap-[100px]">
       <div className="flex flex-col justify-center items-center gap-5 px-5 w-full">
-        <h1 className="font-bold text-xl text-secondary text-lg text-center">
+        <h1 className="font-bold text-xl text-secondary text-lg text-center dark:text-white">
           Contact Us
         </h1>
-        <div className="w-full flex flex-col gap-1 font-bold text-secondary text-sm">
+        <div className="w-full flex flex-col gap-1 font-bold text-secondary text-sm dark:text-primary">
           <div className="w-full flex gap-3 items-center">
             <FontAwesomeIcon icon={faPhone} className="h-5" />
             <a href="tel:2032888006" className="underline hover:no-underline">

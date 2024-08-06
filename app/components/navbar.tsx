@@ -15,7 +15,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="min-h-[75px] flex flex-col justify-center items-center px-5 backdrop-blur bg-white/50 w-[90%] rounded-md mt-[5px] fixed left-1/2 right-1/2 -translate-x-1/2 z-50">
+    <nav className="min-h-[75px] flex flex-col justify-center items-center px-5 backdrop-blur bg-white/50 w-[90%] rounded-md mt-[5px] fixed left-1/2 right-1/2 -translate-x-1/2 z-50 dark:bg-secondary/50">
       <div className="w-full flex items-center justify-between h-nav">
         <Link
           href="/"
@@ -25,7 +25,7 @@ function Navbar() {
         <FontAwesomeIcon
           onClick={() => setIsOpen(!isOpen)}
           icon={faBars}
-          className="cursor-pointer text-secondary h-6"
+          className="cursor-pointer text-secondary h-6 dark:text-white"
         />
       </div>
       <AnimatePresence>
@@ -34,7 +34,7 @@ function Navbar() {
             initial={{ height: 0 }}
             animate={{ height: "auto" }}
             exit={{ height: 0 }}
-            className="flex flex-col gap-2 text-center text-md font-bold text-secondary">
+            className="flex flex-col gap-2 text-center text-md font-bold text-secondary dark:text-white">
             <Link href="/" onClick={handleClick}>
               <motion.p
                 initial={{ opacity: 0 }}

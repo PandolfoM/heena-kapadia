@@ -7,7 +7,14 @@
   transition: all ease 300ms;
   width: 11px !important;
   height: 11px !important;
+  background-color: theme("colors.secondary") !important;
 }
+
+/* @media (prefers-color-scheme: dark) {
+  .swiper-pagination-bullet {
+    background-color: theme("colors.white") !important;
+  }
+} */
 
 .swiper-pagination-bullet-active {
   border-radius: 99999px !important;

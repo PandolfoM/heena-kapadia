@@ -47,7 +47,7 @@ function About() {
   return (
     <section className="flex flex-col justify-center items-center gap-[100px]">
       <div className="flex flex-col justify-center items-center gap-28 w-full">
-        <h1 className="font-bold text-xl text-secondary text-lg text-center">
+        <h1 className="font-bold text-xl text-secondary text-lg text-center dark:text-white">
           About
         </h1>
         <div className="w-full flex flex-col gap-1 font-bold text-secondary text-sm bg-primary p-5">
@@ -58,7 +58,7 @@ function About() {
           <h3 className="text-md font-bold text-secondary">
             Where we Practice
           </h3>
-          <Accordion type="single" collapsible className="text-secondary">
+          <Accordion type="single" collapsible>
             <AccordionItem value="courts">
               <AccordionTrigger>Courts</AccordionTrigger>
               <AccordionContent>
