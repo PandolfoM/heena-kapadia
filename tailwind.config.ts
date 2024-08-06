@@ -18,6 +18,7 @@ const config = {
       },
     },
     colors: {
+      transparent: "transparent",
       white: "#fff",
       primary: "#41A6FF",
       secondary: "#0A1F30",
