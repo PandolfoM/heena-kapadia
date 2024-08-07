@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { bitter } from "../utils/fonts";
 import Link from "next/link";
+import Image from "next/image";
+import lawBalance from "@/app/assets/law-balance.svg";
 
 export default function Home() {
   return (
@@ -38,7 +40,12 @@ export default function Home() {
             necessary to protect you and help you seek justice.
           </p>
           {/* Successes */}
-          <div className="w-[300px] h-auto absolute -bottom-1/2 right-1/2 left-1/2 -translate-x-1/2 rounded-md text-center bg-clip-padding lg:right-0 lg:translate-x-1/3 lg:-translate-y-1/4 lg:w-[440px]">
+          {/* <Image
+            alt=""
+            src={lawBalance}
+            className="absolute top-0 bottom-0 left-1/2 -translate-y-5 -translate-x-1/2 lg:left-0 lg:translate-x-full lg:top-1/2 lg:-translate-y-1/2 2xl:right-1/2 2xl:left-1/2 2xl:-translate-x-[70%]"
+          /> */}
+          <div className="w-[85%] h-auto absolute top-1/2 right-1/2 left-1/2 translate-y-20 -translate-x-1/2 rounded-md text-center bg-clip-padding sm:w-[70%] md:w-1/2 lg:right-0 lg:translate-x-1/3 lg:-translate-y-1/4 lg:w-[375px] xl:w-[440px] 2xl:translate-x-1/2">
             <div className="bg-[#F2F2F2] p-5 rounded-md bg-clip-padding border-[10px] border-white/25 h-full w-full">
               <h4 className="font-bold text-secondary text-lg">Successes</h4>
               <p className="font-bold text-secondary text-sm lg:text-md">
