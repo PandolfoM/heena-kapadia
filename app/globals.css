@@ -7,6 +7,7 @@
   transition: all ease 300ms;
   width: 11px !important;
   height: 11px !important;
+  margin: 0 !important;
   background-color: theme("colors.secondary") !important;
 }
 
@@ -21,6 +22,13 @@
   transition: all ease 300ms;
   background-color: theme("colors.primary") !important;
   width: 30px !important;
+}
+
+@media only screen and (min-width: 1024px) {
+  .swiper-pagination-bullet-active {
+    height: 30px !important;
+    width: 11px !important;
+  }
 }
 
 .swiper-slide-content {

@@ -16,16 +16,28 @@ function Navbar() {
 
   return (
     <nav className="min-h-[75px] flex flex-col justify-center items-center px-5 backdrop-blur bg-white/50 w-[90%] rounded-md mt-[5px] fixed left-1/2 right-1/2 -translate-x-1/2 z-50 dark:bg-secondary/50">
-      <div className="w-full flex items-center justify-between h-nav">
+      <div className="w-full flex items-center justify-between h-nav relative lg:justify-center">
         <Link
           href="/"
-          className={`${bitter.className} text-primary text-md font-bold`}>
+          className={`${bitter.className} text-primary text-md font-bold lg:absolute lg:left-0 lg:text-lg`}>
           HEENA KAPADIA
         </Link>
+        <div
+          className={`${bitter.className} gap-2 justify-center hidden lg:flex lg:text-md`}>
+          <Link href="/" onClick={handleClick}>
+            Home
+          </Link>
+          <Link href="/contact" onClick={handleClick}>
+            Contact
+          </Link>
+          <Link href="/about" onClick={handleClick}>
+            About
+          </Link>
+        </div>
         <FontAwesomeIcon
           onClick={() => setIsOpen(!isOpen)}
           icon={faBars}
-          className="cursor-pointer text-secondary h-6 dark:text-white"
+          className="cursor-pointer text-secondary h-6 dark:text-white lg:hidden"
         />
       </div>
       <AnimatePresence>

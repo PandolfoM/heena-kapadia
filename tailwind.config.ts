@@ -28,6 +28,7 @@ const config = {
       sm: "16px",
       md: "20px",
       lg: "32px",
+      xl: "48px",
     },
     borderRadius: {
       sm: "10px",

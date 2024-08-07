@@ -9,6 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { bitter } from "../utils/fonts";
 
 const CARDS: Card[] = [
   {
@@ -47,18 +48,62 @@ function About() {
   return (
     <section className="flex flex-col justify-center items-center gap-[100px]">
       <div className="flex flex-col justify-center items-center gap-28 w-full">
-        <h1 className="font-bold text-xl text-secondary text-lg text-center dark:text-white">
+        <h1
+          className={`${bitter.className} font-bold text-secondary text-lg text-center dark:text-white lg:text-xl`}>
           About
         </h1>
-        <div className="w-full flex flex-col gap-1 font-bold text-secondary text-sm bg-primary p-5">
+        <div className="w-full flex flex-col gap-1 font-bold text-secondary text-sm bg-primary p-5 md:pl-48 lg:p-10 lg:pl-48">
           <SliderCard cards={CARDS} />
         </div>
 
-        <div className="w-full flex flex-col gap-1 font-bold text-secondary text-sm px-5">
-          <h3 className="text-md font-bold text-secondary">
+        <div className="w-full flex flex-col gap-1 font-bold text-secondary text-sm px-5 lg:gap-[50px]">
+          <h3
+            className={`${bitter.className} text-md font-bold text-secondary dark:text-white lg:text-xl`}>
             Where we Practice
           </h3>
-          <Accordion type="single" collapsible>
+          <section className="hidden lg:flex lg:justify-center lg:gap-5">
+            <div className="bg-secondary text-white w-[375px] lg:w-[320px] h-auto rounded-md flex flex-col p-[50px] dark:bg-primary dark:text-white">
+              <h3 className="text-lg text-center font-bold leading-[100%] h-40">
+                Courts
+              </h3>
+              <div className="text-white/75 font-normal dark:text-white/75">
+                <ul className="list-disc">
+                  <li>Connecticut Federal District Court</li>
+                  <li>New York Federal District Court</li>
+                  <li>Connecticut State Courts</li>
+                  <li>New York State Courts</li>
+                </ul>
+              </div>
+            </div>
+            <div className="bg-secondary text-white w-[375px] lg:w-[320px] h-auto rounded-md flex flex-col p-[50px] dark:bg-primary dark:text-white">
+              <h3 className="text-lg text-center font-bold leading-[100%] h-40">
+                Connecticut Administrative Agencies
+              </h3>
+              <div className="text-white/75 font-normal dark:text-white/75">
+                <ul className="list-disc">
+                  <li>Commission on Human Rights and Opportunities</li>
+                  <li>Department of Labor</li>
+                  <li>Freedom of Information Commission</li>
+                  <li>Office of Public Hearings</li>
+                  <li>State Ethics Office</li>
+                </ul>
+              </div>
+            </div>
+            <div className="bg-secondary text-white w-[375px] lg:w-[320px] h-auto rounded-md flex flex-col p-[50px] dark:bg-primary dark:text-white">
+              <h3 className="text-lg text-center font-bold leading-[100%] h-40">
+                Federal Administrative Agencies
+              </h3>
+              <div className="text-white/75 font-normal dark:text-white/75">
+                <ul className="list-disc">
+                  <li>Equal Employment Opportunities Commission</li>
+                  <li>Occupational Safety and Hazard Administration (OSHA)</li>
+                  <li>Office of Administrative Law Judges</li>
+                  <li>Office of Civil Rights</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <Accordion type="single" collapsible className="block lg:hidden">
             <AccordionItem value="courts">
               <AccordionTrigger>Courts</AccordionTrigger>
               <AccordionContent>
