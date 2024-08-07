@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { bitter } from "../utils/fonts";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -17,7 +18,9 @@ export default function Home() {
             <br className="hidden lg:block" /> resources to protecting and
             advocating for you in these often-difficult situations.
           </p>
-          <Button>Get Started</Button>
+          <Link href="/contact">
+            <Button>Get Started</Button>
+          </Link>
         </div>
         <div className="bg-primary -z-20 w-full px-5 pt-[50px] pb-[150px] relative">
           <h3
@@ -75,19 +78,19 @@ export default function Home() {
               </p>
             </span>
             <div className="flex flex-col gap-[10px] lg:w-[40%]">
-              <Button className="w-full text-sm bg-primary dark:bg-secondary">
+              <Button className="w-full text-sm bg-primary dark:bg-secondary cursor-default">
                 Employee Discrimination
               </Button>
-              <Button className="w-full text-sm bg-primary dark:bg-secondary">
+              <Button className="w-full text-sm bg-primary dark:bg-secondary cursor-default">
                 Whistleblower Retaliation
               </Button>
-              <Button className="w-full text-sm bg-primary dark:bg-secondary">
+              <Button className="w-full text-sm bg-primary dark:bg-secondary cursor-default">
                 Wage and Hour Issues
               </Button>
-              <Button className="w-full text-sm bg-primary dark:bg-secondary">
+              <Button className="w-full text-sm bg-primary dark:bg-secondary cursor-default">
                 Family Medical Leave Act
               </Button>
-              <Button className="w-full text-sm bg-primary dark:bg-secondary">
+              <Button className="w-full text-sm bg-primary dark:bg-secondary cursor-default">
                 Other Areas of Practice
               </Button>
             </div>
