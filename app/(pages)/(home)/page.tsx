@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { bitter } from "../utils/fonts";
 import Link from "next/link";
-import Image from "next/image";
-import lawBalance from "@/app/assets/law-balance.svg";
+import { bitter } from "@/app/utils/fonts";
 
 export default function Home() {
   return (

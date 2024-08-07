@@ -1,14 +1,22 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { bitter } from "../utils/fonts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [currentPath, setCurrentPath] = useState<string>("");
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setCurrentPath(pathname.replace("/", ""));
+  }, [pathname]);
 
   const handleClick = () => {
     setIsOpen(false);
@@ -24,13 +32,31 @@ function Navbar() {
         </Link>
         <div
           className={`${bitter.className} gap-2 justify-center hidden lg:flex lg:text-md`}>
-          <Link href="/" onClick={handleClick}>
+          <Link
+            href="/"
+            onClick={handleClick}
+            className={cn(
+              currentPath === "" && "bg-primary/50",
+              "px-3 py-1 transition-all ease-in-out duration-300 rounded-sm"
+            )}>
             Home
           </Link>
-          <Link href="/contact" onClick={handleClick}>
+          <Link
+            href="/contact"
+            onClick={handleClick}
+            className={cn(
+              currentPath === "contact" && "bg-primary/50",
+              "px-3 py-1 transition-all ease-in-out duration-300 rounded-sm"
+            )}>
             Contact
           </Link>
-          <Link href="/about" onClick={handleClick}>
+          <Link
+            href="/about"
+            onClick={handleClick}
+            className={cn(
+              currentPath === "about" && "bg-primary/50",
+              "px-3 py-1 transition-all ease-in-out duration-300 rounded-sm"
+            )}>
             About
           </Link>
         </div>
@@ -52,7 +78,8 @@ function Navbar() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0, transition: { delay: 0.2 } }}
-                transition={{ delay: 0.1 }}>
+                transition={{ delay: 0.1 }}
+                className={cn(currentPath === "" && "text-primary")}>
                 Home
               </motion.p>
             </Link>
@@ -61,7 +88,8 @@ function Navbar() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0, transition: { delay: 0.1 } }}
-                transition={{ delay: 0.2 }}>
+                transition={{ delay: 0.2 }}
+                className={cn(currentPath === "contact" && "text-primary")}>
                 Contact
               </motion.p>
             </Link>
@@ -71,7 +99,10 @@ function Navbar() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0, transition: { delay: 0.0 } }}
                 transition={{ delay: 0.3 }}
-                className="pb-8">
+                className={cn(
+                  currentPath === "about" && "text-primary",
+                  "pb-8"
+                )}>
                 About
               </motion.p>
             </Link>

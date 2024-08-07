@@ -1,5 +1,4 @@
 import React from "react";
-import SliderCard, { Card } from "../components/slider-card";
 import heena from "@/app/assets/heena.jpg";
 import carmen from "@/app/assets/carmen.jpg";
 import lynn from "@/app/assets/lynn.jpg";
@@ -9,7 +8,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { bitter } from "../utils/fonts";
+import SliderCard, { Card } from "@/app/components/slider-card";
+import { bitter } from "@/app/utils/fonts";
 
 const CARDS: Card[] = [
   {
@@ -63,7 +63,8 @@ function About() {
           </h3>
           <section className="hidden lg:flex lg:justify-center lg:gap-5">
             <div className="bg-secondary text-white w-[375px] lg:w-[320px] h-auto rounded-md flex flex-col p-[50px] dark:bg-primary dark:text-white">
-              <h3 className="text-lg text-center font-bold leading-[100%] h-40">
+              <h3
+                className={`${bitter.className} text-lg text-center font-bold leading-[100%] h-40`}>
                 Courts
               </h3>
               <div className="text-white/75 font-normal dark:text-white/75">
@@ -76,7 +77,8 @@ function About() {
               </div>
             </div>
             <div className="bg-secondary text-white w-[375px] lg:w-[320px] h-auto rounded-md flex flex-col p-[50px] dark:bg-primary dark:text-white">
-              <h3 className="text-lg text-center font-bold leading-[100%] h-40">
+              <h3
+                className={`${bitter.className} text-lg text-center font-bold leading-[100%] h-40`}>
                 Connecticut Administrative Agencies
               </h3>
               <div className="text-white/75 font-normal dark:text-white/75">
@@ -90,7 +92,8 @@ function About() {
               </div>
             </div>
             <div className="bg-secondary text-white w-[375px] lg:w-[320px] h-auto rounded-md flex flex-col p-[50px] dark:bg-primary dark:text-white">
-              <h3 className="text-lg text-center font-bold leading-[100%] h-40">
+              <h3
+                className={`${bitter.className} text-lg text-center font-bold leading-[100%] h-40`}>
                 Federal Administrative Agencies
               </h3>
               <div className="text-white/75 font-normal dark:text-white/75">

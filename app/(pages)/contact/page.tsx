@@ -27,7 +27,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-import { bitter } from "../utils/fonts";
+import { bitter } from "../../utils/fonts";
 
 const formSchema = z
   .object({
