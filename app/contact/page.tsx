@@ -87,13 +87,17 @@ function Contact() {
               Socials
             </h3>
             <div className="w-full flex gap-3 items-center">
-              <FontAwesomeIcon icon={faPhone} className="h-5" />
+              <div className="w-7 flex items-end">
+                <FontAwesomeIcon icon={faPhone} className="h-5" />
+              </div>
               <a href="tel:2032888006" className="underline hover:no-underline">
                 (203) 288-8006
               </a>
             </div>
             <div className="w-full flex gap-3 items-center">
-              <FontAwesomeIcon icon={faMapPin} className="h-5" />
+              <div className="w-7 flex items-end">
+                <FontAwesomeIcon icon={faMapPin} className="h-5" />
+              </div>
               <a
                 href="https://maps.app.goo.gl/7Xty2qBTjYtK2c5A7"
                 target="_blank"
@@ -102,7 +106,9 @@ function Contact() {
               </a>
             </div>
             <div className="w-full flex gap-3 items-center">
-              <FontAwesomeIcon icon={faEnvelope} className="h-5" />
+              <div className="w-7 flex items-end">
+                <FontAwesomeIcon icon={faEnvelope} className="h-5" />
+              </div>
               <a
                 href="mailto:hkapadia@heenakapadiaLaw.com"
                 target="_blank"
