@@ -10,6 +10,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import { Button } from "@/components/ui/button";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { ReadMoreDialog } from "./dialogs";
 
 export interface Card {
   title: string;
@@ -85,9 +86,11 @@ function SliderCard({ cards }: Props) {
               <p className="text-xs h-max font-normal text-secondary/50 line-clamp-6 lg:text-sm">
                 {card.description}
               </p>
-              <Button className="bg-primary text-white shadow-[0_0_20px_1px] shadow-primary/50">
-                Read More
-              </Button>
+              <ReadMoreDialog header={card.title} text={card.description}>
+                <Button className="bg-primary text-white shadow-[0_0_20px_1px] shadow-primary/50">
+                  Read More
+                </Button>
+              </ReadMoreDialog>
             </div>
           </SwiperSlide>
         ))}
