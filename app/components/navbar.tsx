@@ -37,7 +37,7 @@ function Navbar() {
             onClick={handleClick}
             className={cn(
               currentPath === "" && "bg-primary/50",
-              "px-3 py-1 transition-all ease-in-out duration-300 rounded-sm"
+              "px-3 py-1 transition-all ease-in-out duration-300 rounded-sm hover:bg-primary/30"
             )}>
             Home
           </Link>
@@ -46,7 +46,7 @@ function Navbar() {
             onClick={handleClick}
             className={cn(
               currentPath === "contact" && "bg-primary/50",
-              "px-3 py-1 transition-all ease-in-out duration-300 rounded-sm"
+              "px-3 py-1 transition-all ease-in-out duration-300 rounded-sm hover:bg-primary/30"
             )}>
             Contact
           </Link>
@@ -55,7 +55,7 @@ function Navbar() {
             onClick={handleClick}
             className={cn(
               currentPath === "about" && "bg-primary/50",
-              "px-3 py-1 transition-all ease-in-out duration-300 rounded-sm"
+              "px-3 py-1 transition-all ease-in-out duration-300 rounded-sm hover:bg-primary/30"
             )}>
             About
           </Link>
