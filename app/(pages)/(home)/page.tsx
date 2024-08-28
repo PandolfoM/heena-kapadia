@@ -54,6 +54,13 @@ export default function Home() {
                 <br /> discrimination/retaliation case
               </p>
               <p className="font-bold text-secondary text-sm lg:text-md">
+                $1,800,000
+              </p>
+              <p className="text-secondary text-sm lg:text-md">
+                Settlement in
+                <br/> free speech retaliation case.
+              </p>
+              <p className="font-bold text-secondary text-sm lg:text-md">
                 $1,722,946
               </p>
               <p className="text-secondary text-sm lg:text-md">
@@ -70,7 +77,7 @@ export default function Home() {
           </div>
         </div>
         {/* Areas of practice */}
-        <div className="w-full px-5 pt-[150px] lg:w-4/5">
+        <div className="w-full px-5 pt-[175px] lg:w-4/5">
           <div className="bg-secondary px-5 rounded-md py-5 flex flex-col gap-[10px] dark:bg-primary lg:flex-row lg:justify-between lg:py-[50px]">
             <span className="flex flex-col gap-[10px] lg:justify-center">
               <h3
@@ -83,21 +90,31 @@ export default function Home() {
               </p>
             </span>
             <div className="flex flex-col gap-[10px] lg:w-[40%]">
-              <Button className="w-full text-sm bg-primary dark:bg-secondary cursor-default">
+              <Link
+                href="/employee_discrimination"
+                className="cursor-pointer w-full font-bold text-sm bg-primary dark:bg-secondary flex flex-col items-center rounded-md py-2">
                 Employee Discrimination
-              </Button>
-              <Button className="w-full text-sm bg-primary dark:bg-secondary cursor-default">
+              </Link>
+              <Link
+                href="/whistleblower"
+                className="cursor-pointer w-full font-bold text-sm bg-primary dark:bg-secondary flex flex-col items-center rounded-md py-2">
                 Whistleblower Retaliation
-              </Button>
-              <Button className="w-full text-sm bg-primary dark:bg-secondary cursor-default">
+              </Link>
+              <Link
+                href="/wage_hour_issues"
+                className="cursor-pointer w-full font-bold text-sm bg-primary dark:bg-secondary flex flex-col items-center rounded-md py-2">
                 Wage and Hour Issues
-              </Button>
-              <Button className="w-full text-sm bg-primary dark:bg-secondary cursor-default">
+              </Link>
+              <Link
+                href="/family_medical_leave"
+                className="cursor-pointer w-full font-bold text-sm bg-primary dark:bg-secondary flex flex-col items-center rounded-md py-2">
                 Family Medical Leave Act
-              </Button>
-              <Button className="w-full text-sm bg-primary dark:bg-secondary cursor-default">
+              </Link>
+              <Link
+                href="/other_practices"
+                className="cursor-pointer w-full font-bold text-sm bg-primary dark:bg-secondary flex flex-col items-center rounded-md py-2">
                 Other Areas of Practice
-              </Button>
+              </Link>
             </div>
           </div>
         </div>

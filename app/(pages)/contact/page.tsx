@@ -6,7 +6,7 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect } from "react";
+import React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import {
@@ -14,56 +14,53 @@ import {
   FormControl,
   FormField,
   FormItem,
+  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { bitter } from "../../utils/fonts";
 
-const formSchema = z.object({
+const appFormSchema = z.object({
   name: z.string().min(1, { message: "Required" }),
   email: z.string().email(),
   phone: z.string().min(1, { message: "Required" }),
-  // interest: z.string().optional(),
-  // type: z.enum(["appointment", "question"]),
   message: z.string().min(1, { message: "Required" }),
 });
-// .refine(
-//   (input) => {
-//     if (input.type === "appointment" && !input.interest) return false;
-//     return true;
-//   },
-//   {
-//     message: "Required",
-//     path: ["interest"],
-//   }
-// );
+
+const qFormSchema = z.object({
+  name: z.string().min(1, { message: "Required" }),
+  email: z.string().email(),
+  question: z.string().min(1, { message: "Required" }),
+});
 
 function Contact() {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const appForm = useForm<z.infer<typeof appFormSchema>>({
+    resolver: zodResolver(appFormSchema),
     defaultValues: {
       name: "",
       email: "",
       phone: "",
-      // interest: "",
-      // type: "appointment",
       message: "",
     },
   });
 
-  // const type = form.watch("type");
+  const qForm = useForm<z.infer<typeof qFormSchema>>({
+    resolver: zodResolver(qFormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      question: "",
+    },
+  });
 
-  const onSubmit = (data: z.infer<typeof formSchema>) => {
+  const onSubmitApp = (data: z.infer<typeof appFormSchema>) => {
+    console.log(data);
+  };
+
+  const onSubmitQ = (data: z.infer<typeof qFormSchema>) => {
     console.log(data);
   };
 
@@ -74,39 +71,40 @@ function Contact() {
           className={`${bitter.className} font-bold lg:text-xl text-secondary text-lg text-center dark:text-white`}>
           Contact Us
         </h1>
-        <div className="w-full flex flex-col gap-5 lg:flex-row-reverse lg:justify-around lg:w-[75%] lg:gap-10">
-          <div className="w-full flex flex-col gap-1 font-bold text-secondary text-sm lg:text-md dark:text-primary lg:w-fit">
-            <div className="w-full flex gap-3 items-center">
-              <FontAwesomeIcon icon={faPhone} className="h-5 w-7" />
-              <a href="tel:2032888006" className="underline hover:no-underline">
-                (203) 288-8006
-              </a>
-            </div>
-            <div className="w-full flex gap-3 items-center">
-              <FontAwesomeIcon icon={faMapPin} className="h-5 w-7" />
-              <a
-                href="https://maps.app.goo.gl/7Xty2qBTjYtK2c5A7"
-                target="_blank"
-                className="underline hover:no-underline">
-                572 White Plains Road Trumbull, CT 06611
-              </a>
-            </div>
-            <div className="w-full flex gap-3 items-center">
-              <FontAwesomeIcon icon={faEnvelope} className="h-5 w-7" />
-              <a
-                href="mailto:hkapadia@heenakapadiaLaw.com"
-                target="_blank"
-                className="underline hover:no-underline">
-                hkapadia@heenakapadiaLaw.com
-              </a>
-            </div>
+        <section className="flex flex-col gap-5 text-center justify-center items-center py-3 lg:items-start lg:flex-row lg:text-md">
+          <div className="lg:w-52">
+            <p className="font-bold">Call</p>
+            <a href="tel:2032888006" className="underline hover:no-underline">
+              (203) 288-8006
+            </a>
           </div>
-          <Form {...form}>
+          <div className="lg:w-52">
+            <p className="font-bold">Office</p>
+            <a
+              href="https://maps.app.goo.gl/7Xty2qBTjYtK2c5A7"
+              target="_blank"
+              className="underline hover:no-underline">
+              572 White Plains Road Trumbull, CT 06611
+            </a>
+          </div>
+          <div className="lg:w-52">
+            <p className="font-bold">Email</p>
+            <a
+              href="mailto:hkapadia@heenakapadiaLaw.com"
+              target="_blank"
+              className="underline hover:no-underline">
+              hkapadia@heenakapadiaLaw.com
+            </a>
+          </div>
+        </section>
+        <div className="w-full flex flex-col gap-10 lg:flex-row lg:justify-around lg:w-[75%] lg:gap-10">
+          <Form {...appForm}>
             <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="w-full flex flex-col gap-[5px] lg:max-w-[50%] lg:min-w-[30rem]">
+              onSubmit={appForm.handleSubmit(onSubmitApp)}
+              className="w-full flex flex-col gap-[5px] lg:max-w-[50%] lg:min-w-[35rem]">
+              <FormLabel className="text-md">Request an appointment</FormLabel>
               <FormField
-                control={form.control}
+                control={appForm.control}
                 name="name"
                 render={({ field }) => (
                   <FormItem>
@@ -118,7 +116,7 @@ function Contact() {
                 )}
               />
               <FormField
-                control={form.control}
+                control={appForm.control}
                 name="email"
                 render={({ field }) => (
                   <FormItem>
@@ -130,7 +128,7 @@ function Contact() {
                 )}
               />
               <FormField
-                control={form.control}
+                control={appForm.control}
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
@@ -141,49 +139,60 @@ function Contact() {
                   </FormItem>
                 )}
               />
-              {/* <FormField
-                control={form.control}
-                name="type"
-                render={({ field }) => (
-                  <FormItem>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Message Type" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="appointment">Appointment</SelectItem>
-                        <SelectItem value="question">Question</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage className="text-xs" />
-                  </FormItem>
-                )}
-              />
-              {type === "appointment" && (
-                <FormField
-                  control={form.control}
-                  name="interest"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <Input placeholder="Area of Interest" {...field} />
-                      </FormControl>
-                      <FormMessage className="text-xs" />
-                    </FormItem>
-                  )}
-                />
-              )} */}
               <FormField
-                control={form.control}
+                control={appForm.control}
                 name="message"
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
                       <Textarea placeholder="Message" rows={5} {...field} />
+                    </FormControl>
+                    <FormMessage className="text-xs" />
+                  </FormItem>
+                )}
+              />
+              <Button className="w-full mt-[15px]" type="submit">
+                Submit
+              </Button>
+            </form>
+          </Form>
+
+          <Form {...qForm}>
+            <form
+              onSubmit={qForm.handleSubmit(onSubmitQ)}
+              className="w-full flex flex-col gap-[5px] lg:max-w-[50%] lg:min-w-[20rem]">
+              <FormLabel className="text-md">Ask a question</FormLabel>
+              <FormField
+                control={qForm.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="Name" {...field} />
+                    </FormControl>
+                    <FormMessage className="text-xs" />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={qForm.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="Email" {...field} />
+                    </FormControl>
+                    <FormMessage className="text-xs" />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={qForm.control}
+                name="question"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Textarea placeholder="Question" rows={5} {...field} />
                     </FormControl>
                     <FormMessage className="text-xs" />
                   </FormItem>

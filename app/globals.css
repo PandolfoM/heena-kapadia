@@ -51,3 +51,40 @@
   opacity: 0;
   transform: translateY(50px);
 }
+
+.card {
+  /* Custom hover effects for .card */
+}
+
+.card:hover {
+  transform: translateY(-20px);
+  text-shadow: 2px 2px 8px #6e5b94;
+}
+
+.card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transform: rotateX(-15deg) rotateY(10deg);
+}
+
+.custom-shadow:hover {
+  box-shadow: 0px 0px 20px rgba(157, 71, 255, 0.5),
+    0px 5px 5px -1px rgba(163, 58, 233, 0.25),
+    inset 4px 4px 8px rgba(219, 175, 255, 0.5),
+    inset -4px -4px 8px rgba(137, 19, 216, 0.35);
+}
+
+.card:hover .filledbar {
+  width: 100%;
+}
+
+.stroke {
+  stroke: white;
+  stroke-dasharray: 360;
+  stroke-dashoffset: 360;
+  transition: 0.6s ease-out;
+}
+
+.card:hover .stroke {
+  stroke-dashoffset: 100;
+}
