@@ -52,7 +52,7 @@ function About() {
           className={`${bitter.className} font-bold text-secondary text-lg text-center dark:text-white lg:text-xl`}>
           About
         </h1>
-        <div className="w-full flex flex-col gap-1 font-bold text-secondary text-sm bg-primary p-5 md:pl-48 lg:p-10 lg:pl-48">
+        <div className="w-full flex flex-col gap-1 font-bold text-secondary text-sm bg-primary p-5 md:pl-44 lg:p-10 lg:pl-60">
           <SliderCard cards={CARDS} />
         </div>
 

@@ -29,25 +29,24 @@ import {
 import { Button } from "@/components/ui/button";
 import { bitter } from "../../utils/fonts";
 
-const formSchema = z
-  .object({
-    name: z.string().min(1, { message: "Required" }),
-    email: z.string().email(),
-    phone: z.string().min(1, { message: "Required" }),
-    interest: z.string().optional(),
-    type: z.enum(["appointment", "question"]),
-    message: z.string().min(1, { message: "Required" }),
-  })
-  .refine(
-    (input) => {
-      if (input.type === "appointment" && !input.interest) return false;
-      return true;
-    },
-    {
-      message: "Required",
-      path: ["interest"],
-    }
-  );
+const formSchema = z.object({
+  name: z.string().min(1, { message: "Required" }),
+  email: z.string().email(),
+  phone: z.string().min(1, { message: "Required" }),
+  // interest: z.string().optional(),
+  // type: z.enum(["appointment", "question"]),
+  message: z.string().min(1, { message: "Required" }),
+});
+// .refine(
+//   (input) => {
+//     if (input.type === "appointment" && !input.interest) return false;
+//     return true;
+//   },
+//   {
+//     message: "Required",
+//     path: ["interest"],
+//   }
+// );
 
 function Contact() {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -56,19 +55,13 @@ function Contact() {
       name: "",
       email: "",
       phone: "",
-      interest: "",
-      type: "appointment",
+      // interest: "",
+      // type: "appointment",
       message: "",
     },
   });
 
-  const type = form.watch("type");
-
-  useEffect(() => {
-    if (type === "question") {
-      form.setValue("interest", "");
-    }
-  }, [type]);
+  // const type = form.watch("type");
 
   const onSubmit = (data: z.infer<typeof formSchema>) => {
     console.log(data);
@@ -82,22 +75,15 @@ function Contact() {
           Contact Us
         </h1>
         <div className="w-full flex flex-col gap-5 lg:flex-row-reverse lg:justify-around lg:w-[75%] lg:gap-10">
-          <div className="w-full flex flex-col gap-1 font-bold text-secondary text-sm dark:text-primary lg:w-fit">
-            <h3 className="hidden lg:block lg:text-white lg:text-lg lg:leading-[100%] lg:pb-3">
-              Socials
-            </h3>
+          <div className="w-full flex flex-col gap-1 font-bold text-secondary text-sm lg:text-md dark:text-primary lg:w-fit">
             <div className="w-full flex gap-3 items-center">
-              <div className="w-7 flex items-end">
-                <FontAwesomeIcon icon={faPhone} className="h-5" />
-              </div>
+              <FontAwesomeIcon icon={faPhone} className="h-5 w-7" />
               <a href="tel:2032888006" className="underline hover:no-underline">
                 (203) 288-8006
               </a>
             </div>
             <div className="w-full flex gap-3 items-center">
-              <div className="w-7 flex items-end">
-                <FontAwesomeIcon icon={faMapPin} className="h-5" />
-              </div>
+              <FontAwesomeIcon icon={faMapPin} className="h-5 w-7" />
               <a
                 href="https://maps.app.goo.gl/7Xty2qBTjYtK2c5A7"
                 target="_blank"
@@ -106,9 +92,7 @@ function Contact() {
               </a>
             </div>
             <div className="w-full flex gap-3 items-center">
-              <div className="w-7 flex items-end">
-                <FontAwesomeIcon icon={faEnvelope} className="h-5" />
-              </div>
+              <FontAwesomeIcon icon={faEnvelope} className="h-5 w-7" />
               <a
                 href="mailto:hkapadia@heenakapadiaLaw.com"
                 target="_blank"
@@ -157,7 +141,7 @@ function Contact() {
                   </FormItem>
                 )}
               />
-              <FormField
+              {/* <FormField
                 control={form.control}
                 name="type"
                 render={({ field }) => (
@@ -192,7 +176,7 @@ function Contact() {
                     </FormItem>
                   )}
                 />
-              )}
+              )} */}
               <FormField
                 control={form.control}
                 name="message"

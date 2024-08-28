@@ -2,12 +2,15 @@
 
 import React, { useEffect, useState } from "react";
 import { bitter } from "../utils/fonts";
+import logo from "@/app/assets/logo.png";
+import logo_dark from "@/app/assets/logo_dark.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -23,12 +26,11 @@ function Navbar() {
   };
 
   return (
-    <nav className="min-h-[75px] flex flex-col justify-center items-center px-5 backdrop-blur bg-white/50 w-[90%] rounded-md mt-[5px] fixed left-1/2 right-1/2 -translate-x-1/2 z-50 shadow-[0_0_20px_1px] shadow-white/80 dark:bg-secondary/50 dark:shadow-secondary/80">
+    <nav className="flex flex-col justify-center items-center px-5 bg-white w-full z-10 shadow-[0_0_20px_1px] shadow-white/80 border-b border-secondary/20 dark:border-b-white/20 dark:bg-secondary dark:shadow-secondary/80">
       <div className="w-full flex items-center justify-between h-nav relative lg:justify-center">
-        <Link
-          href="/"
-          className={`${bitter.className} text-primary text-md font-bold lg:absolute lg:left-0 lg:text-lg`}>
-          HEENA KAPADIA
+        <Link href="/" className="lg:absolute lg:left-0 lg:text-lg">
+          <Image src={logo} alt="heena kapadia logo" width={200} className="hidden dark:block" />
+          <Image src={logo_dark} alt="heena kapadia dark logo" width={200} className="block dark:hidden" />
         </Link>
         <div
           className={`${bitter.className} gap-2 justify-center hidden lg:flex lg:text-md`}>
@@ -101,7 +103,7 @@ function Navbar() {
                 transition={{ delay: 0.3 }}
                 className={cn(
                   currentPath === "about" && "text-primary",
-                  "pb-8"
+                  "pb-2"
                 )}>
                 About
               </motion.p>
