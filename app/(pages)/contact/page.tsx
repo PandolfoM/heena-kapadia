@@ -17,7 +17,7 @@ import { useForm } from "react-hook-form";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { bitter } from "../../utils/fonts";
-import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
+import Map from "@/app/components/map";
 
 const appFormSchema = z.object({
   name: z.string().min(1, { message: "Required" }),
@@ -72,7 +72,9 @@ function Contact() {
         <section className="w-full gap-10 text-md lg:flex">
           <div className="flex gap-2 items-center justify-center">
             <FontAwesomeIcon icon={faPhone} />
-            <a href="tel:2032888006" className="underline hover:no-underline text-nowrap">
+            <a
+              href="tel:2032888006"
+              className="underline hover:no-underline text-nowrap">
               (203) 288-8006
             </a>
           </div>
@@ -283,16 +285,7 @@ function Contact() {
       </div>
 
       <div className="hidden lg:block w-[500px]">
-        <APIProvider apiKey={process.env.GOOGLE_API_KEY}>
-          <Map
-            style={{ width: "100%", height: "500px" }}
-            center={{ lat: 41.23, lng: -73.18 }}
-            defaultZoom={15}
-            gestureHandling={"greedy"}
-            disableDefaultUI={true}>
-            <Marker position={{ lat: 41.23, lng: -73.18 }} />
-          </Map>
-        </APIProvider>
+        <Map />
       </div>
     </section>
   );
