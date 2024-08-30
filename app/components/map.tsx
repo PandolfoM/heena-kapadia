@@ -469,15 +469,13 @@ function Map() {
   };
 
   return (
-    <LoadScript googleMapsApiKey={process.env.GOOGLE_API_KEY}>
-      <GoogleMap
-        mapContainerStyle={mapContainerStyle}
-        center={center}
-        zoom={15}
-        options={options}>
-        <Marker position={center} />
-      </GoogleMap>
-    </LoadScript>
+    <GoogleMap
+      mapContainerStyle={mapContainerStyle}
+      center={center}
+      zoom={15}
+      options={options}>
+      <Marker position={center} />
+    </GoogleMap>
   );
 }
 
