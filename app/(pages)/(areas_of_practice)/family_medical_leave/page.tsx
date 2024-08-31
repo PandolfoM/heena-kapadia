@@ -49,7 +49,7 @@ function FamilyMedicalLeave() {
           discouraged your from taking it, or outright refused it, or if you
           fear your employer might punish you, or your employer has in fact
           punished you for taking it,{" "}
-          <Link href="/contact" className="underline hover:no-underline">
+          <Link href="/contact" className="underline hover:no-underline font-bold">
             please contact us for a confidential consultation.
           </Link>
         </p>

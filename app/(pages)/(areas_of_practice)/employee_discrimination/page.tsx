@@ -1,10 +1,11 @@
+import Divider from "@/app/components/divider";
 import { bitter } from "@/app/utils/fonts";
 import Link from "next/link";
 import React from "react";
 
 function EmployeeDiscrimination() {
   return (
-    <section className="px-5 flex flex-col gap-10">
+    <section className="flex flex-col gap-10">
       <h1
         className={`${bitter.className} font-bold text-secondary text-lg text-center dark:text-white lg:text-xl`}>
         Employment Discrimination
@@ -30,7 +31,7 @@ function EmployeeDiscrimination() {
         </p>
         <p>
           If you think you may be a victim of employment discrimination,{" "}
-          <Link href="/contact" className="underline hover:no-underline">
+          <Link href="/contact" className="underline hover:no-underline font-bold">
             please contact us for a confidential consultation.
           </Link>
         </p>
@@ -41,7 +42,7 @@ function EmployeeDiscrimination() {
           className={`${bitter.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
           Age
         </h3>
-        <div className="h-[2px] w-3/5 bg-secondary/50 rounded-full dark:bg-white/20 m-auto" />
+        <Divider />
         <p>
           Employees at all levels correctly believe their age and experience are
           an asset to their organizations. But employers often view an
@@ -60,7 +61,7 @@ function EmployeeDiscrimination() {
           className={`${bitter.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
           Gender
         </h3>
-        <div className="h-[2px] w-3/5 bg-secondary/50 rounded-full dark:bg-white/20 m-auto" />
+        <Divider />
         <p>
           Gender discrimination can be fairly obvious when pay inequity between
           males and females is undeniable and an organization continues to be
@@ -76,7 +77,7 @@ function EmployeeDiscrimination() {
           className={`${bitter.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
           Race/Ethnicity
         </h3>
-        <div className="h-[2px] w-3/5 bg-secondary/50 rounded-full dark:bg-white/20 m-auto" />
+        <Divider />
         <p>
           It is illegal for an employer to discriminate against an employee on
           the basis of race with regard to hiring, firing, benefits,
@@ -106,7 +107,7 @@ function EmployeeDiscrimination() {
           className={`${bitter.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
           Disability
         </h3>
-        <div className="h-[2px] w-3/5 bg-secondary/50 rounded-full dark:bg-white/20 m-auto" />
+        <Divider />
         <p>
           Federal and Connecticut laws prohibit discrimination against
           individuals with disabilities—in employment, as well as all in areas
@@ -123,7 +124,7 @@ function EmployeeDiscrimination() {
           className={`${bitter.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
           Pregnancy
         </h3>
-        <div className="h-[2px] w-3/5 bg-secondary/50 rounded-full dark:bg-white/20 m-auto" />
+        <Divider />
         <p>
           Pregnancy discrimination includes an employer denying time off or
           reasonable accommodations for a pregnant employee, as well as firing
@@ -138,7 +139,7 @@ function EmployeeDiscrimination() {
           className={`${bitter.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
           Sexual Harassment
         </h3>
-        <div className="h-[2px] w-3/5 bg-secondary/50 rounded-full dark:bg-white/20 m-auto" />
+        <Divider />
         <p>
           State and federal laws prohibit unwanted sexual conduct in the
           workplace. Illegal conduct ranges from undesired comments about a
@@ -162,7 +163,7 @@ function EmployeeDiscrimination() {
           className={`${bitter.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
           Sexual Orientation
         </h3>
-        <div className="h-[2px] w-3/5 bg-secondary/50 rounded-full dark:bg-white/20 m-auto " />
+        <Divider />
         <p>
           It is generally understood that the phrase “sexual orientation” refers
           to whether a person is homosexual, or gay; heterosexual, or straight;
@@ -184,7 +185,7 @@ function EmployeeDiscrimination() {
           className={`${bitter.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
           Marital Status
         </h3>
-        <div className="h-[2px] w-3/5 bg-secondary/50 rounded-full dark:bg-white/20 m-auto" />
+        <Divider />
         <p>
           Employment discrimination on the basis of marital status is prohibited
           in the state of Connecticut. Employers cannot refuse to hire, or
@@ -201,7 +202,7 @@ function EmployeeDiscrimination() {
           className={`${bitter.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
           Veterans
         </h3>
-        <div className="h-[2px] w-3/5 bg-secondary/50 rounded-full dark:bg-white/20 m-auto" />
+        <Divider />
         <p>
           Veteran discrimination happens when being a former member of the
           uniformed military services makes a person a target of workplace

@@ -1,3 +1,4 @@
+import Divider from "@/app/components/divider";
 import { bitter } from "@/app/utils/fonts";
 import Link from "next/link";
 import React from "react";
@@ -24,7 +25,7 @@ function Whistleblower() {
         </p>
         <p>
           If you're a whistleblower concerned about retaliation,{" "}
-          <Link href="/contact" className="underline hover:no-underline">
+          <Link href="/contact" className="underline hover:no-underline font-bold">
             please contact us for a confidential consultation.
           </Link>
         </p>
@@ -35,7 +36,7 @@ function Whistleblower() {
           className={`${bitter.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
           First Amendment/Free Speech
         </h3>
-        <div className="h-[2px] w-3/5 bg-secondary/50 rounded-full dark:bg-white/20 m-auto" />
+        <Divider />
         <p>
           Connecticut law protects employees from retaliation by an employer for
           exercising their right to free speech under the United States
@@ -59,7 +60,7 @@ function Whistleblower() {
           className={`${bitter.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
           SOX
         </h3>
-        <div className="h-[2px] w-3/5 bg-secondary/50 rounded-full dark:bg-white/20 m-auto" />
+        <Divider />
         <p>
           SOX (the Sarbanes-Oxley Act) protects whistleblowers who provide
           information, cause it to be provided, or otherwise assist an
@@ -89,7 +90,7 @@ function Whistleblower() {
           className={`${bitter.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
           OSHA/DOL REPORTING
         </h3>
-        <div className="h-[2px] w-3/5 bg-secondary/50 rounded-full dark:bg-white/20 m-auto" />
+        <Divider />
         <p>
           The Department of Labor's OSHA Whistleblower Protection Program
           protects employees from retaliation for reporting employer violations

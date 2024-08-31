@@ -40,9 +40,9 @@ function WageHourIssues() {
         <p>
           If you have any issues around employer wage and hour policies,
           overtime compensation, or independent contractor classification,{" "}
-          <b>
+          <Link href="/contact" className="underline hover:no-underline font-bold">
             please call for a confidential consultation about your situation.
-          </b>
+          </Link>
         </p>
       </div>
     </section>

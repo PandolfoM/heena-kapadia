@@ -1,5 +1,5 @@
+import Divider from "@/app/components/divider";
 import { bitter } from "@/app/utils/fonts";
-import Link from "next/link";
 import React from "react";
 
 function OtherPractices() {
@@ -15,7 +15,7 @@ function OtherPractices() {
           className={`${bitter.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
           Wrongful Termination
         </h3>
-        <div className="h-[2px] w-3/5 bg-secondary/50 rounded-full dark:bg-white/20 m-auto" />
+        <Divider />
         <p>
           Connecticut is an at-will employment state. An employer may fire an
           at-will employee for any reason or no reason, but not for a reason
@@ -31,7 +31,7 @@ function OtherPractices() {
           className={`${bitter.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
           Contract/Severance Negotiation
         </h3>
-        <div className="h-[2px] w-3/5 bg-secondary/50 rounded-full dark:bg-white/20 m-auto" />
+        <Divider />
         <p>
           Employment contracts can be obvious, such as when they cover terms of
           employment in advance, including non-compete agreements. Less obvious
@@ -55,7 +55,7 @@ function OtherPractices() {
           className={`${bitter.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
           Workers' Compensation Retaliation
         </h3>
-        <div className="h-[2px] w-3/5 bg-secondary/50 rounded-full dark:bg-white/20 m-auto" />
+        <Divider />
         <p>
           Workers' Compensation insurance covers you if you have been injured at
           work. It compensates you for lost time from work, as well as for
@@ -73,7 +73,7 @@ function OtherPractices() {
           className={`${bitter.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
           Mediation
         </h3>
-        <div className="h-[2px] w-3/5 bg-secondary/50 rounded-full dark:bg-white/20 m-auto" />
+        <Divider />
         <p>
           The Connecticut Judicial Branch has reported that less than 2% of all
           civil cases end in a verdict. Instead, there is a settlement, arrived
