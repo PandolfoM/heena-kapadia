@@ -97,7 +97,11 @@ function Navbar() {
                   "bg-primary/20",
                 "px-3 py-1 transition-all ease-in-out duration-300 rounded-sm hover:bg-primary/50 cursor-pointer peer"
               )}>
-              Practice Areas <FontAwesomeIcon icon={faChevronUp} className="transition-all duration-300 ease-in-out text-sm text-secondary/50 ml-2 group-hover:rotate-180 dark:text-white/50" />
+              Practice Areas{" "}
+              <FontAwesomeIcon
+                icon={faChevronUp}
+                className="transition-all duration-300 ease-in-out text-sm text-secondary/50 ml-2 group-hover:rotate-180 dark:text-white/50"
+              />
             </p>
 
             <div className="absolute w-max h-fit pt-1 text-white top-9 text-sm hidden group-hover:block ">
@@ -165,7 +169,7 @@ function Navbar() {
             initial={{ height: 0 }}
             animate={{ height: "auto" }}
             exit={{ height: 0, transition: { delay: 0.2 } }}
-            className="flex flex-col text-center text-md font-bold text-secondary dark:text-white">
+            className="flex flex-col text-center text-md font-bold gap-2 text-secondary dark:text-white">
             <Link href="/" onClick={handleClick}>
               <motion.p
                 initial={{ opacity: 0 }}
