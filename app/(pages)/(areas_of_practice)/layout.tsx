@@ -3,5 +3,5 @@ export default function PracticeLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div className="px-5 lg:px-0 lg:w-1/2 lg:m-auto">{children}</div>;
+  return <div className="px-5 page lg:px-0 lg:w-1/2 lg:m-auto">{children}</div>;
 }

@@ -44,7 +44,7 @@ function Contact() {
   };
 
   return (
-    <section className="flex gap-20 px-5 items-center justify-center lg:flex-row xl:pl-20 xl:pr-52">
+    <section className="flex gap-20 px-5 page items-center justify-center lg:flex-row xl:pl-20 xl:pr-52">
       <div className="flex flex-col justify-center items-center gap-5 flex-1">
         <h1
           className={`${bitter.className} font-bold  text-secondary text-lg text-center w-full lg:text-left lg:text-xl dark:text-white`}>

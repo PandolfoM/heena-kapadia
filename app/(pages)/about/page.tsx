@@ -10,6 +10,12 @@ import {
 } from "@/components/ui/accordion";
 import SliderCard, { Card } from "@/app/components/slider-card";
 import { bitter } from "@/app/utils/fonts";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGavel,
+  faLandmark,
+  faShieldAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
 const CARDS: Card[] = [
   {
@@ -46,7 +52,7 @@ Attorney Chapman attended the University of Texas at Austin, where she graduated
 
 function About() {
   return (
-    <section className="flex flex-col justify-center items-center gap-[100px]">
+    <section className="flex flex-col justify-center items-center gap-[100px] page">
       <div className="flex flex-col justify-center items-center gap-28 w-full">
         <h1
           className={`${bitter.className} font-bold text-secondary text-lg text-center dark:text-white lg:text-xl`}>
@@ -61,10 +67,11 @@ function About() {
             className={`${bitter.className} text-md font-bold text-secondary dark:text-white lg:text-xl`}>
             Where we Practice
           </h3>
-          <section className="hidden lg:flex lg:justify-center lg:gap-5">
-            <div className="bg-secondary text-white w-[375px] lg:w-[320px] h-auto rounded-md flex flex-col p-[50px] dark:bg-primary dark:text-white">
+          <section className="flex flex-col lg:flex-row lg:justify-center gap-10 lg:m-auto">
+            <div className="bg-secondary text-white w-full max-w-[375px] m-auto shadow-[0_0_20px_1px] shadow-secondary/50  lg:max-w-none lg:m-0 lg:w-[320px] h-auto rounded-md flex flex-col p-[50px] dark:bg-primary dark:text-white dark:shadow-primary/50">
+              <FontAwesomeIcon icon={faLandmark} size="2x" className="mb-2" />
               <h3
-                className={`${bitter.className} text-lg text-center font-bold leading-[100%] h-40`}>
+                className={`${bitter.className} text-lg text-center font-bold leading-[100%] h-32 lg:h-40`}>
                 Courts
               </h3>
               <div className="text-white/75 font-normal dark:text-white/75">
@@ -76,9 +83,10 @@ function About() {
                 </ul>
               </div>
             </div>
-            <div className="bg-secondary text-white w-[375px] lg:w-[320px] h-auto rounded-md flex flex-col p-[50px] dark:bg-primary dark:text-white">
+            <div className="bg-secondary text-white w-full max-w-[375px] m-auto shadow-[0_0_20px_1px] shadow-secondary/50 lg:max-w-none lg:w-[320px] h-auto rounded-md flex flex-col p-[50px] dark:bg-primary dark:text-white dark:shadow-primary/50">
+              <FontAwesomeIcon icon={faGavel} size="2x" className="mb-2" />
               <h3
-                className={`${bitter.className} text-lg text-center font-bold leading-[100%] h-40`}>
+                className={`${bitter.className} text-lg text-center font-bold leading-[100%] h-32 lg:h-40`}>
                 Connecticut Administrative Agencies
               </h3>
               <div className="text-white/75 font-normal dark:text-white/75">
@@ -91,9 +99,10 @@ function About() {
                 </ul>
               </div>
             </div>
-            <div className="bg-secondary text-white w-[375px] lg:w-[320px] h-auto rounded-md flex flex-col p-[50px] dark:bg-primary dark:text-white">
+            <div className="bg-secondary text-white w-full max-w-[375px] m-auto shadow-[0_0_20px_1px] shadow-secondary/50 lg:max-w-none lg:w-[320px] h-auto rounded-md flex flex-col p-[50px] dark:bg-primary dark:text-white dark:shadow-primary/50">
+              <FontAwesomeIcon icon={faShieldAlt} size="2x" className="mb-2" />
               <h3
-                className={`${bitter.className} text-lg text-center font-bold leading-[100%] h-40`}>
+                className={`${bitter.className} text-lg text-center font-bold leading-[100%] h-32 lg:h-40`}>
                 Federal Administrative Agencies
               </h3>
               <div className="text-white/75 font-normal dark:text-white/75">
@@ -106,7 +115,7 @@ function About() {
               </div>
             </div>
           </section>
-          <Accordion type="single" collapsible className="block lg:hidden">
+          {/* <Accordion type="single" collapsible className="block lg:hidden">
             <AccordionItem value="courts">
               <AccordionTrigger>Courts</AccordionTrigger>
               <AccordionContent>
@@ -145,7 +154,7 @@ function About() {
                 </ul>
               </AccordionContent>
             </AccordionItem>
-          </Accordion>
+          </Accordion> */}
         </div>
       </div>
     </section>

@@ -1,26 +1,39 @@
+import hero from "@/app/assets/hero.jpg";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { bitter } from "@/app/utils/fonts";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBriefcaseMedical,
+  faMoneyCheck,
+  faScaleBalanced,
+  faUserTie,
+  faWind,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   return (
     <>
-      <section className="flex flex-col justify-center items-center gap-[100px]">
-        <div className="flex flex-col justify-center items-center gap-5 px-5">
-          <h1
-            className={`${bitter.className} font-bold text-secondary text-lg text-center dark:text-white lg:text-xl`}>
-            A Law Firm
-            <br className="lg:hidden" /> Dedicated Exclusively
-            <br className="lg:hidden" /> to Employees
-          </h1>
-          <p className="text-secondary/50 text-center dark:text-white/50 lg:text-md">
-            Working only for employees enables us to devote all our{" "}
-            <br className="hidden lg:block" /> resources to protecting and
-            advocating for you in these often-difficult situations.
-          </p>
-          <Link href="/contact">
-            <Button>Get Started</Button>
-          </Link>
+      <section className="flex flex-col justify-center items-center skipFirst">
+        <div className="relative flex flex-col justify-center items-center gap-5 px-5 w-full h-[30rem]">
+          <div className="absolute inset-0 bg-[url('/hero.jpg')] bg-no-repeat bg-cover bg-center z-0" />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-primary/10 z-10" />
+          <div className="relative z-20 flex flex-col justify-center items-center gap-5 px-5">
+            <h1
+              className={`${bitter.className} font-bold text-lg text-center text-white lg:text-xl`}>
+              A Law Firm
+              <br className="lg:hidden" /> Dedicated Exclusively
+              <br className="lg:hidden" /> to Employees
+            </h1>
+            <p className="text-center text-white/90 lg:text-md">
+              Working only for employees enables us to devote all our{" "}
+              <br className="hidden lg:block" /> resources to protecting and
+              advocating for you in these often-difficult situations.
+            </p>
+            <Link href="/contact">
+              <Button className="bg-primary">Get Started</Button>
+            </Link>
+          </div>
         </div>
         <div className="bg-primary -z-20 w-full px-5 pt-[50px] pb-[150px] relative">
           <h3
@@ -58,7 +71,7 @@ export default function Home() {
               </p>
               <p className="text-secondary text-sm lg:text-md">
                 Settlement in
-                <br/> free speech retaliation case.
+                <br /> free speech retaliation case.
               </p>
               <p className="font-bold text-secondary text-sm lg:text-md">
                 $1,722,946
@@ -78,41 +91,58 @@ export default function Home() {
         </div>
         {/* Areas of practice */}
         <div className="w-full px-5 pt-[175px] lg:w-4/5">
-          <div className="bg-secondary px-5 rounded-md py-5 flex flex-col gap-[10px] dark:bg-primary lg:flex-row lg:justify-between lg:py-[50px]">
+          <div className="bg-secondary px-5 rounded-md py-5 flex flex-col gap-[10px] dark:bg-primary xl:flex-row xl:justify-between xl:py-[50px]">
             <span className="flex flex-col gap-[10px] lg:justify-center">
               <h3
-                className={`${bitter.className} text-white font-bold text-lg leading-tight text-center lg:text-left lg:w-fit lg:text-xl`}>
+                className={`${bitter.className} text-white font-bold text-lg leading-tight text-center xl:text-left xl:w-fit xl:text-xl`}>
                 Areas of Practice
               </h3>
-              <p className="text-white/75 lg:text-left lg:w-96">
+              <p className="text-white/75 xl:text-left xl:w-96">
                 The Law Office of Heena Kapadia represents employees in a broad
                 array of employment related matters.
               </p>
             </span>
-            <div className="flex flex-col gap-[10px] lg:w-[40%]">
+            <div className="flex flex-col items-center text-white w-[87%] m-auto gap-[10px] sm:w-auto md:grid md:grid-cols-2 lg:w-[55%] xl:whitespace-nowrap xl:justify-items-start xl:m-0 ">
               <Link
                 href="/employee_discrimination"
-                className="cursor-pointer w-full font-bold text-sm bg-primary dark:bg-secondary flex flex-col items-center rounded-md py-2">
+                className="cursor-pointer w-full font-bold text-sm flex gap-2 justify-start items-center rounded-md py-2 px-2">
+                <FontAwesomeIcon icon={faUserTie} size="2x" className="w-10" />
                 Employee Discrimination
               </Link>
               <Link
                 href="/whistleblower"
-                className="cursor-pointer w-full font-bold text-sm bg-primary dark:bg-secondary flex flex-col items-center rounded-md py-2">
+                className="cursor-pointer w-full font-bold text-sm flex gap-2 justify-start items-center rounded-md py-2 px-2">
+                <FontAwesomeIcon icon={faWind} size="2x" className="w-10" />
                 Whistleblower Retaliation
               </Link>
               <Link
                 href="/wage_hour_issues"
-                className="cursor-pointer w-full font-bold text-sm bg-primary dark:bg-secondary flex flex-col items-center rounded-md py-2">
+                className="cursor-pointer w-full font-bold text-sm flex gap-2 justify-start items-center rounded-md py-2 px-2">
+                <FontAwesomeIcon
+                  icon={faMoneyCheck}
+                  size="2x"
+                  className="w-10"
+                />
                 Wage and Hour Issues
               </Link>
               <Link
                 href="/family_medical_leave"
-                className="cursor-pointer w-full font-bold text-sm bg-primary dark:bg-secondary flex flex-col items-center rounded-md py-2">
+                className="cursor-pointer w-full font-bold text-sm flex gap-2 justify-start items-center rounded-md py-2 px-2">
+                <FontAwesomeIcon
+                  icon={faBriefcaseMedical}
+                  size="2x"
+                  className="w-10"
+                />
                 Family Medical Leave Act
               </Link>
               <Link
                 href="/other_practices"
-                className="cursor-pointer w-full font-bold text-sm bg-primary dark:bg-secondary flex flex-col items-center rounded-md py-2">
+                className="cursor-pointer w-full font-bold text-sm flex gap-2 justify-start items-center rounded-md py-2 px-2">
+                <FontAwesomeIcon
+                  icon={faScaleBalanced}
+                  size="2x"
+                  className="w-10"
+                />
                 Other Areas of Practice
               </Link>
             </div>
