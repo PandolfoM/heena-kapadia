@@ -1,12 +1,12 @@
-import hero from "@/app/assets/hero.jpg";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { bitter } from "@/app/utils/fonts";
+import { raleway } from "@/app/utils/fonts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBriefcaseMedical,
+  faFileContract,
+  faGavel,
   faMoneyCheck,
-  faScaleBalanced,
   faUserTie,
   faWind,
 } from "@fortawesome/free-solid-svg-icons";
@@ -15,12 +15,12 @@ export default function Home() {
   return (
     <>
       <section className="flex flex-col justify-center items-center skipFirst">
-        <div className="relative flex flex-col justify-center items-center gap-5 px-5 w-full h-[30rem]">
+        <div className="relative flex flex-col justify-center items-center gap-5 px-5 w-full h-[30rem] z-0">
           <div className="absolute inset-0 bg-[url('/hero.jpg')] bg-no-repeat bg-cover bg-center z-0" />
           <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-primary/10 z-10" />
           <div className="relative z-20 flex flex-col justify-center items-center gap-5 px-5">
             <h1
-              className={`${bitter.className} font-bold text-lg text-center text-white lg:text-xl`}>
+              className={`${raleway.className} font-bold text-lg text-center text-white lg:text-xl`}>
               A Law Firm
               <br className="lg:hidden" /> Dedicated Exclusively
               <br className="lg:hidden" /> to Employees
@@ -31,13 +31,13 @@ export default function Home() {
               advocating for you in these often-difficult situations.
             </p>
             <Link href="/contact">
-              <Button className="bg-primary">Get Started</Button>
+              <Button className="bg-primary font-bold">Get Started</Button>
             </Link>
           </div>
         </div>
         <div className="bg-primary -z-20 w-full px-5 pt-[50px] pb-[150px] relative">
           <h3
-            className={`${bitter.className} text-secondary font-bold text-lg leading-tight lg:text-xl`}>
+            className={`${raleway.className} font-bold text-secondary text-lg leading-tight lg:text-xl`}>
             We Are On{" "}
             <span className="text-white">
               Your
@@ -90,14 +90,14 @@ export default function Home() {
           </div>
         </div>
         {/* Areas of practice */}
-        <div className="w-full px-5 pt-[175px] lg:w-4/5">
+        <div className="w-full px-5 pt-96 lg:pt-60 lg:w-4/5">
           <div className="bg-secondary px-5 rounded-md py-5 flex flex-col gap-[10px] dark:bg-primary xl:flex-row xl:justify-between xl:py-[50px]">
             <span className="flex flex-col gap-[10px] lg:justify-center">
               <h3
-                className={`${bitter.className} text-white font-bold text-lg leading-tight text-center xl:text-left xl:w-fit xl:text-xl`}>
+                className={`${raleway.className} text-white font-bold text-lg leading-tight text-center xl:text-left xl:w-fit xl:text-xl`}>
                 Areas of Practice
               </h3>
-              <p className="text-white/75 xl:text-left xl:w-96">
+              <p className="text-white/75 pb-5 text-center xl:text-left xl:w-96">
                 The Law Office of Heena Kapadia represents employees in a broad
                 array of employment related matters.
               </p>
@@ -107,7 +107,7 @@ export default function Home() {
                 href="/employee_discrimination"
                 className="cursor-pointer w-full font-bold text-sm flex gap-2 justify-start items-center rounded-md py-2 px-2">
                 <FontAwesomeIcon icon={faUserTie} size="2x" className="w-10" />
-                Employee Discrimination
+                Employment Discrimination
               </Link>
               <Link
                 href="/whistleblower"
@@ -139,11 +139,21 @@ export default function Home() {
                 href="/other_practices"
                 className="cursor-pointer w-full font-bold text-sm flex gap-2 justify-start items-center rounded-md py-2 px-2">
                 <FontAwesomeIcon
-                  icon={faScaleBalanced}
+                  icon={faGavel}
                   size="2x"
                   className="w-10"
                 />
-                Other Areas of Practice
+                Wrongful Termination
+              </Link>
+              <Link
+                href="/other_practices"
+                className="cursor-pointer w-full font-bold text-sm flex gap-2 justify-start items-center rounded-md py-2 px-2 whitespace-break-spaces">
+                <FontAwesomeIcon
+                  icon={faFileContract}
+                  size="2x"
+                  className="w-10"
+                />
+                Contract / Severance Negotiation
               </Link>
             </div>
           </div>

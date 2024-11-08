@@ -1,4 +1,4 @@
-import { bitter } from "@/app/utils/fonts";
+import { raleway } from "@/app/utils/fonts";
 import Link from "next/link";
 import React from "react";
 
@@ -6,7 +6,7 @@ function WageHourIssues() {
   return (
     <section className="px-5 flex flex-col gap-10">
       <h1
-        className={`${bitter.className} font-bold text-secondary text-lg text-center dark:text-white lg:text-xl`}>
+        className={`${raleway.className} font-bold text-secondary text-lg text-center dark:text-white lg:text-xl`}>
         Wage and Hour Issues
       </h1>
       <div

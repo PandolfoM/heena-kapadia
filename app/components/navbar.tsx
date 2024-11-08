@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { bitter } from "../utils/fonts";
+import { nunitosans } from "../utils/fonts";
 import logo from "@/app/assets/logo.png";
 import logo_dark from "@/app/assets/logo_dark.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -44,9 +44,9 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex flex-col justify-center items-center px-5 bg-white w-full z-10 shadow-[0_0_20px_1px] shadow-white/80 border-b border-secondary/20 dark:border-b-white/20 dark:bg-secondary dark:shadow-secondary/80">
-      <div className="w-full flex items-center justify-between h-nav relative lg:justify-center">
-        <Link href="/" className="lg:absolute lg:left-0 lg:text-lg">
+    <nav className="flex flex-col justify-center items-center px-5 bg-secondary text-white w-full z-10 shadow-[0_0_20px_1px] shadow-secondary/80 border-b border-secondary/20 dark:border-b-white/20 dark:bg-secondary dark:shadow-secondary/80">
+      <div className="w-full flex items-center justify-between relative lg:justify-center h-navMobile sm:h-nav ">
+        <Link href="/" className="lg:absolute lg:left-10 xl:left-40 lg:text-lg">
           <Image
             src={logo}
             alt="heena kapadia logo"
@@ -54,14 +54,14 @@ function Navbar() {
             className="hidden dark:block"
           />
           <Image
-            src={logo_dark}
+            src={logo}
             alt="heena kapadia dark logo"
             width={200}
             className="block dark:hidden"
           />
         </Link>
         <div
-          className={`${bitter.className} gap-2 justify-center hidden lg:flex lg:text-md`}>
+          className={`${nunitosans.className} gap-2 justify-center hidden lg:flex lg:text-md`}>
           <Link
             href="/"
             className={cn(
@@ -100,54 +100,54 @@ function Navbar() {
               Practice Areas{" "}
               <FontAwesomeIcon
                 icon={faChevronUp}
-                className="transition-all duration-300 ease-in-out text-sm text-secondary/50 ml-2 group-hover:rotate-180 dark:text-white/50"
+                className="transition-all duration-300 ease-in-out text-sm text-white/50 ml-2 group-hover:rotate-180 dark:text-white/50"
               />
             </p>
 
-            <div className="absolute w-max h-fit pt-1 text-white top-9 text-sm hidden group-hover:block ">
+            <div className="absolute w-max h-fit pt-1 text-white top-9 text-sm hidden z-50 group-hover:block">
               <div className="bg-secondary p-2 rounded-sm dark:bg-primary flex flex-col gap-2">
                 <Link
                   href="/employee_discrimination"
                   className={cn(
-                    "cursor-pointer hover:bg-white/20 rounded-sm p-2",
+                    "cursor-pointer hover:bg-primary/50 rounded-sm p-2",
                     currentPath === "employee_discrimination" &&
-                      "text-white bg-white/20 dark:bg-secondary/20"
+                      "text-white bg-primary/20 dark:bg-secondary/20"
                   )}>
-                  Employee Discrimination
+                  Employment Discrimination
                 </Link>
                 <Link
                   href="/whistleblower"
                   className={cn(
-                    "cursor-pointer hover:bg-white/20 rounded-sm p-2",
+                    "cursor-pointer hover:bg-primary/50 rounded-sm p-2",
                     currentPath === "whistleblower" &&
-                      "text-white bg-white/20 dark:bg-secondary/20"
+                      "text-white bg-primary/20 dark:bg-secondary/20"
                   )}>
                   Whistleblower Retaliation
                 </Link>
                 <Link
                   href="/wage_hour_issues"
                   className={cn(
-                    "cursor-pointer hover:bg-white/20 rounded-sm p-2",
+                    "cursor-pointer hover:bg-primary/50 rounded-sm p-2",
                     currentPath === "wage_hour_issues" &&
-                      "text-white bg-white/20 dark:bg-secondary/20"
+                      "text-white bg-primary/20 dark:bg-secondary/20"
                   )}>
                   Wage and Hour Issues
                 </Link>
                 <Link
                   href="/family_medical_leave"
                   className={cn(
-                    "cursor-pointer hover:bg-white/20 rounded-sm p-2",
+                    "cursor-pointer hover:bg-primary/50 rounded-sm p-2",
                     currentPath === "family_medical_leave" &&
-                      "text-white bg-white/20 dark:bg-secondary/20"
+                      "text-white bg-primary/20 dark:bg-secondary/20"
                   )}>
                   Family Medical Leave Act
                 </Link>
                 <Link
                   href="/other_practices"
                   className={cn(
-                    "cursor-pointer hover:bg-white/20 rounded-sm p-2 pb-2",
+                    "cursor-pointer hover:bg-primary/50 rounded-sm p-2 pb-2",
                     currentPath === "other_practices" &&
-                      "text-white bg-white/20 dark:bg-secondary/20"
+                      "text-white bg-primary/20 dark:bg-secondary/20"
                   )}>
                   Other Areas of Practice
                 </Link>
@@ -155,10 +155,15 @@ function Navbar() {
             </div>
           </div>
         </div>
+        <a
+          href="tel:2032888006"
+          className={`${nunitosans.className} underline hover:no-underline text-md text-nowrap block absolute right-0 top-0 sm:top-auto sm:right-14 lg:right-10 xl:right-40`}>
+          (203) 288-8006
+        </a>
         <FontAwesomeIcon
           onClick={toggleMenu}
           icon={faBars}
-          className="cursor-pointer text-secondary h-6 dark:text-white lg:hidden"
+          className="cursor-pointer text-white h-6 dark:text-white lg:hidden"
         />
       </div>
 
@@ -168,8 +173,8 @@ function Navbar() {
           <motion.div
             initial={{ height: 0 }}
             animate={{ height: "auto" }}
-            exit={{ height: 0, transition: { delay: 0.2 } }}
-            className="flex flex-col text-center text-md font-bold gap-2 text-secondary dark:text-white">
+            exit={{ height: 0, transition: { delay: 0.4 } }}
+            className="flex flex-col text-center text-md font-bold text-white dark:text-white">
             <Link href="/" onClick={handleClick}>
               <motion.p
                 initial={{ opacity: 0 }}
@@ -211,7 +216,7 @@ function Navbar() {
               Practice Areas{" "}
               <FontAwesomeIcon
                 className={cn(
-                  "transition-all duration-300 ease-in-out text-sm text-secondary/50 dark:text-white/50 ml-2",
+                  "transition-all duration-300 ease-in-out text-sm text-white/50 dark:text-white/50 ml-2",
                   isPracticeOpen && "rotate-180"
                 )}
                 icon={faChevronUp}
@@ -224,7 +229,7 @@ function Navbar() {
                   initial={{ height: 0 }}
                   animate={{ height: "auto" }}
                   exit={{ height: 0, transition: { delay: 0.4 } }}
-                  className="flex flex-col gap-2 text-center text-sm font-bold text-secondary dark:text-white">
+                  className="flex flex-col gap-2 text-center text-sm font-bold text-white dark:text-white">
                   <Link href="/employee_discrimination" onClick={handleClick}>
                     <motion.p
                       initial={{ opacity: 0 }}
@@ -237,7 +242,7 @@ function Navbar() {
                         currentPath === "employee_discrimination" &&
                           "text-primary"
                       )}>
-                      Employee Discrimination
+                      Employment Discrimination
                     </motion.p>
                   </Link>
                   <Link href="/whistleblower" onClick={handleClick}>

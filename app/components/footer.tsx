@@ -1,11 +1,8 @@
 import React from "react";
-import super_lawyer from "@/app/assets/super_lawyer.png";
 import Image from "next/image";
-import Link from "next/link";
 import logo from "@/app/assets/logo.png";
 import logo_dark from "@/app/assets/logo_dark.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 function Footer() {
   return (
@@ -83,21 +80,21 @@ function Footer() {
     //   </section> */}
     // </footer>
 
-    <footer className="w-full flex flex-col items-start justify-end text-secondary pt-[100px] dark:text-white">
-      <section className="bg-secondary/5 w-full px-5 pb-5 pt-10 dark:bg-white/5 md:flex md:flex-row md:gap-20 md:justify-center md:items-start">
+    <footer className="w-full flex flex-col items-start justify-end text-secondary mt-60 dark:text-white bg-secondary/5">
+      <section className="w-full px-5 pb-5 pt-10 dark:bg-white/5 md:flex md:flex-row md:gap-32 md:justify-center md:items-start">
         <div className="pb-10 md:pb-0">
           <Image
             src={logo}
             alt="heena kapadia logo"
-            className="hidden dark:block w-[200px] md:w-[250px]"
+            className="hidden dark:block w-[250px] md:w-[300px]"
           />
           <Image
             src={logo_dark}
             alt="heena kapadia dark logo"
-            className="block dark:hidden w-[200px] md:w-[250px]"
+            className="block dark:hidden w-[250px] md:w-[300px]"
           />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col text-md">
           <p className="font-bold">Trumbull</p>
           <a href="tel:2032888006" className="underline hover:no-underline">
             (203) 288-8006
@@ -117,9 +114,14 @@ function Footer() {
           </a>
         </div>
       </section>
-      <p className="m-auto text-xs py-2 text-secondary/50 dark:text-white/50">
-        © 2024 HeenaKapadiaLaw. All Rights Reserved.
-      </p>
+      <section className="m-auto text-sm pt-5 pb-5 text-secondary/50 dark:text-white/50 flex gap-2">
+        <p>
+          © 2024 HeenaKapadiaLaw. All Rights Reserved. | {" "} <br className="block sm:hidden"/>
+          <Link href="/disclaimer" className="underline hover:no-underline">
+            Legal Disclaimer
+          </Link>
+        </p>
+      </section>
     </footer>
   );
 }

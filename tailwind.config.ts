@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config = {
-  // darkMode: "class",
+  darkMode: "selector",
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -51,7 +51,8 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       height: {
-        nav: "75px",
+        nav: "100px",
+        navMobile: "120px",
       },
     },
   },

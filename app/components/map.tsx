@@ -460,7 +460,8 @@ function Map() {
     };
   }, []);
 
-  const mapStyles = isDarkMode ? darkModeStyles : lightModeStyles;
+  // const mapStyles = isDarkMode ? darkModeStyles : lightModeStyles;
+  const mapStyles = lightModeStyles;
 
   const options = {
     styles: mapStyles,

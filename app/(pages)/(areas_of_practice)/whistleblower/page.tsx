@@ -1,5 +1,5 @@
 import Divider from "@/app/components/divider";
-import { bitter } from "@/app/utils/fonts";
+import { raleway } from "@/app/utils/fonts";
 import Link from "next/link";
 import React from "react";
 
@@ -7,7 +7,7 @@ function Whistleblower() {
   return (
     <section className="px-5 flex flex-col gap-10">
       <h1
-        className={`${bitter.className} font-bold text-secondary text-lg text-center dark:text-white lg:text-xl`}>
+        className={`${raleway.className} font-bold text-secondary text-lg text-center dark:text-white lg:text-xl`}>
         Whistleblower Retaliation
       </h1>
       <div className="flex flex-col gap-2 text-secondary dark:text-white">
@@ -33,7 +33,7 @@ function Whistleblower() {
 
       <div className="flex flex-col gap-2 text-secondary dark:text-white">
         <h3
-          className={`${bitter.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
+          className={`${raleway.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
           First Amendment/Free Speech
         </h3>
         <Divider />
@@ -57,7 +57,7 @@ function Whistleblower() {
 
       <div className="flex flex-col gap-2 text-secondary dark:text-white">
         <h3
-          className={`${bitter.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
+          className={`${raleway.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
           SOX
         </h3>
         <Divider />
@@ -87,7 +87,7 @@ function Whistleblower() {
 
       <div className="flex flex-col gap-2 text-secondary dark:text-white">
         <h3
-          className={`${bitter.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
+          className={`${raleway.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
           OSHA/DOL REPORTING
         </h3>
         <Divider />
