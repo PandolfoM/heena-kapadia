@@ -10,13 +10,13 @@ function Footer() {
     //   <div className="h-[2px] w-[75px] bg-secondary/50 rounded-full dark:bg-white/20" />
     //   <section className="flex flex-col gap-3 text-center justify-center items-center py-3 lg:flex-row">
     //     <div className="lg:w-52">
-    //       <p className="font-bold">Call</p>
+    //       <p className="">Call</p>
     //       <a href="tel:2032888006" className="underline hover:no-underline">
     //         (203) 288-8006
     //       </a>
     //     </div>
     //     <div className="lg:w-52">
-    //       <p className="font-bold">Office</p>
+    //       <p className="">Office</p>
     //       <a
     //         href="https://maps.app.goo.gl/7Xty2qBTjYtK2c5A7"
     //         target="_blank"
@@ -25,7 +25,7 @@ function Footer() {
     //       </a>
     //     </div>
     //     <div className="lg:w-52">
-    //       <p className="font-bold">Email</p>
+    //       <p className="">Email</p>
     //       <a
     //         href="mailto:hkapadia@heenakapadiaLaw.com"
     //         target="_blank"
@@ -80,14 +80,14 @@ function Footer() {
     //   </section> */}
     // </footer>
 
-    <footer className="w-full flex flex-col items-start justify-end text-secondary mt-60 dark:text-white bg-secondary/5">
+    <footer className="w-full flex flex-col items-start justify-end text-primary mt-60 dark:text-white bg-primary/5">
       <section className="w-full px-5 pb-5 pt-10 dark:bg-white/5 md:flex md:flex-row md:gap-32 md:justify-center md:items-start">
         <div className="pb-10 md:pb-0">
-          <Image
+          {/* <Image
             src={logo}
             alt="heena kapadia logo"
             className="hidden dark:block w-[250px] md:w-[300px]"
-          />
+          /> */}
           <Image
             src={logo_dark}
             alt="heena kapadia dark logo"
@@ -95,7 +95,7 @@ function Footer() {
           />
         </div>
         <div className="flex flex-col text-md">
-          <p className="font-bold">Trumbull</p>
+          <p className="">Trumbull</p>
           <a href="tel:2032888006" className="underline hover:no-underline">
             (203) 288-8006
           </a>
@@ -114,9 +114,10 @@ function Footer() {
           </a>
         </div>
       </section>
-      <section className="m-auto text-sm pt-5 pb-5 text-secondary/50 dark:text-white/50 flex gap-2">
+      <section className="m-auto text-sm pt-5 pb-5 text-primary/50 dark:text-white/50 flex gap-2">
         <p>
-          © 2024 HeenaKapadiaLaw. All Rights Reserved. | {" "} <br className="block sm:hidden"/>
+          © 2024 HeenaKapadiaLaw. All Rights Reserved. |{" "}
+          <br className="block sm:hidden" />
           <Link href="/disclaimer" className="underline hover:no-underline">
             Legal Disclaimer
           </Link>

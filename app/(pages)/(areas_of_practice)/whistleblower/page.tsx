@@ -1,5 +1,5 @@
 import Divider from "@/app/components/divider";
-import { raleway } from "@/app/utils/fonts";
+import { nunitosans } from "@/app/utils/fonts";
 import Link from "next/link";
 import React from "react";
 
@@ -7,10 +7,10 @@ function Whistleblower() {
   return (
     <section className="px-5 flex flex-col gap-10">
       <h1
-        className={`${raleway.className} font-bold text-secondary text-lg text-center dark:text-white lg:text-xl`}>
+        className={`${nunitosans.className}  text-primary text-lg text-center dark:text-white lg:text-xl`}>
         Whistleblower Retaliation
       </h1>
-      <div className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <p>
           If an employee discovers an employer is doing something illegal or
           unethical and reports it, the employee whistleblower is protected by
@@ -25,15 +25,15 @@ function Whistleblower() {
         </p>
         <p>
           If you're a whistleblower concerned about retaliation,{" "}
-          <Link href="/contact" className="underline hover:no-underline font-bold">
+          <Link href="/contact" className="underline hover:no-underline ">
             please contact us for a confidential consultation.
           </Link>
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <h3
-          className={`${raleway.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
+          className={`${nunitosans.className}  text-primary text-md text-center dark:text-white lg:text-lg`}>
           First Amendment/Free Speech
         </h3>
         <Divider />
@@ -55,9 +55,9 @@ function Whistleblower() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <h3
-          className={`${raleway.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
+          className={`${nunitosans.className}  text-primary text-md text-center dark:text-white lg:text-lg`}>
           SOX
         </h3>
         <Divider />
@@ -85,9 +85,9 @@ function Whistleblower() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <h3
-          className={`${raleway.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
+          className={`${nunitosans.className}  text-primary text-md text-center dark:text-white lg:text-lg`}>
           OSHA/DOL REPORTING
         </h3>
         <Divider />

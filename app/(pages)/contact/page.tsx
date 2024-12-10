@@ -16,8 +16,7 @@ import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { raleway } from "../../utils/fonts";
-import dynamic from "next/dynamic";
+import { nunitosans } from "../../utils/fonts";
 
 const appFormSchema = z.object({
   name: z.string().min(1, { message: "Required" }),
@@ -25,8 +24,6 @@ const appFormSchema = z.object({
   phone: z.string().min(1, { message: "Required" }),
   message: z.string().min(1, { message: "Required" }),
 });
-
-const MapComponent = dynamic(() => import("@/app/components/map"));
 
 function Contact() {
   const appForm = useForm<z.infer<typeof appFormSchema>>({
@@ -48,7 +45,7 @@ function Contact() {
       <div className="flex flex-col justify-center items-center gap-10 flex-1">
         <section className="w-full text-md lg:flex lg:flex-col">
           <h1
-            className={`${raleway.className} font-bold text-secondary text-lg text-center w-full lg:text-left lg:text-xl dark:text-white`}>
+            className={`${nunitosans.className}  text-primary text-lg text-center w-full lg:text-left lg:text-xl dark:text-white`}>
             Contact Us
           </h1>
 
@@ -137,7 +134,11 @@ function Contact() {
       </div>
 
       <div className="hidden lg:block w-[500px]">
-        <MapComponent />
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000.220045024043!2d-73.18670552354097!3d41.23876450520013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e7d07595e945c5%3A0xd34bb7a2097c6069!2sLaw%20Firm%20of%20Heena%20Kapadia!5e0!3m2!1sen!2sus!4v1733869621522!5m2!1sen!2sus"
+          width="100%"
+          height="500px"
+          loading="lazy"></iframe>
       </div>
     </section>
   );

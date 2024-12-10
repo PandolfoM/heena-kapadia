@@ -44,7 +44,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex flex-col justify-center items-center px-5 bg-secondary text-white w-full z-10 shadow-[0_0_20px_1px] shadow-secondary/80 border-b border-secondary/20 dark:border-b-white/20 dark:bg-secondary dark:shadow-secondary/80">
+    <nav className="flex flex-col justify-center items-center px-5 bg-primary text-white w-full z-10 shadow-[0_0_20px_1px] shadow-primary/80 border-b border-primary/20">
       <div className="w-full flex items-center justify-between relative lg:justify-center h-navMobile sm:h-nav ">
         <Link href="/" className="lg:absolute lg:left-10 xl:left-40 lg:text-lg">
           <Image
@@ -104,8 +104,8 @@ function Navbar() {
               />
             </p>
 
-            <div className="absolute w-max h-fit pt-1 text-white top-9 text-sm hidden z-50 group-hover:block">
-              <div className="bg-secondary p-2 rounded-sm dark:bg-primary flex flex-col gap-2">
+            <div className="absolute w-max h-fit text-white top-8 pt-1 text-sm z-50 hidden group-hover:block">
+              <div className="bg-primary p-2 rounded-sm dark:bg-primary flex flex-col gap-2">
                 <Link
                   href="/employee_discrimination"
                   className={cn(
@@ -174,14 +174,14 @@ function Navbar() {
             initial={{ height: 0 }}
             animate={{ height: "auto" }}
             exit={{ height: 0, transition: { delay: 0.4 } }}
-            className="flex flex-col text-center text-md font-bold text-white dark:text-white">
+            className="flex flex-col text-center text-md text-white dark:text-white">
             <Link href="/" onClick={handleClick}>
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0, transition: { delay: 0.3 } }}
                 transition={{ delay: 0.0 }}
-                className={cn(currentPath === "" && "text-primary")}>
+                className={cn(currentPath === "" && "text-accent")}>
                 Home
               </motion.p>
             </Link>
@@ -191,7 +191,7 @@ function Navbar() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0, transition: { delay: 0.2 } }}
                 transition={{ delay: 0.1 }}
-                className={cn(currentPath === "contact" && "text-primary")}>
+                className={cn(currentPath === "contact" && "text-accent")}>
                 Contact
               </motion.p>
             </Link>
@@ -202,7 +202,7 @@ function Navbar() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0, transition: { delay: 0.1 } }}
                 transition={{ delay: 0.2 }}
-                className={cn(currentPath === "about" && "text-primary")}>
+                className={cn(currentPath === "about" && "text-accent")}>
                 About
               </motion.p>
             </Link>
@@ -229,7 +229,7 @@ function Navbar() {
                   initial={{ height: 0 }}
                   animate={{ height: "auto" }}
                   exit={{ height: 0, transition: { delay: 0.4 } }}
-                  className="flex flex-col gap-2 text-center text-sm font-bold text-white dark:text-white">
+                  className="flex flex-col gap-2 text-center text-sm text-white dark:text-white">
                   <Link href="/employee_discrimination" onClick={handleClick}>
                     <motion.p
                       initial={{ opacity: 0 }}
@@ -240,7 +240,7 @@ function Navbar() {
                       className={cn(
                         "cursor-pointer",
                         currentPath === "employee_discrimination" &&
-                          "text-primary"
+                          "text-accent"
                       )}>
                       Employment Discrimination
                     </motion.p>
@@ -254,7 +254,7 @@ function Navbar() {
                       onClick={() => setIsPracticeOpen(!isPracticeOpen)}
                       className={cn(
                         "cursor-pointer",
-                        currentPath === "whistleblower" && "text-primary"
+                        currentPath === "whistleblower" && "text-accent"
                       )}>
                       Whistleblower Retaliation
                     </motion.p>
@@ -268,7 +268,7 @@ function Navbar() {
                       onClick={() => setIsPracticeOpen(!isPracticeOpen)}
                       className={cn(
                         "cursor-pointer",
-                        currentPath === "wage_hour_issues" && "text-primary"
+                        currentPath === "wage_hour_issues" && "text-accent"
                       )}>
                       Wage and Hour Issues
                     </motion.p>
@@ -282,7 +282,7 @@ function Navbar() {
                       onClick={() => setIsPracticeOpen(!isPracticeOpen)}
                       className={cn(
                         "cursor-pointer",
-                        currentPath === "family_medical_leave" && "text-primary"
+                        currentPath === "family_medical_leave" && "text-accent"
                       )}>
                       Family Medical Leave Act
                     </motion.p>
@@ -296,7 +296,7 @@ function Navbar() {
                       onClick={() => setIsPracticeOpen(!isPracticeOpen)}
                       className={cn(
                         "cursor-pointer pb-2",
-                        currentPath === "other_practices" && "text-primary"
+                        currentPath === "other_practices" && "text-accent"
                       )}>
                       Other Areas of Practice
                     </motion.p>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { raleway } from "./utils/fonts";
+import { nunitosans } from "./utils/fonts";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full w-full m-0 p-0 overflow-hidden">
       <body
-        className={`${raleway.className} h-full w-full m-0 p-0 overflow-hidden flex flex-col relative bg-[#ececec] dark:bg-secondary dark:text-white`}>
+        className={`${nunitosans.className} h-full w-full m-0 p-0 overflow-hidden flex flex-col relative bg-[#ececec] dark:bg-secondary dark:text-white`}>
         <Navbar />
         <main className="h-full overflow-y-auto flex-grow">
           {children}

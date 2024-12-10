@@ -1,5 +1,5 @@
 import Divider from "@/app/components/divider";
-import { raleway } from "@/app/utils/fonts";
+import { nunitosans } from "@/app/utils/fonts";
 import Link from "next/link";
 import React from "react";
 
@@ -7,10 +7,10 @@ function EmployeeDiscrimination() {
   return (
     <section className="flex flex-col gap-10">
       <h1
-        className={`${raleway.className} font-bold text-secondary text-lg text-center dark:text-white lg:text-xl`}>
+        className={`${nunitosans.className}  text-primary text-lg text-center dark:text-white lg:text-xl`}>
         Employment Discrimination
       </h1>
-      <div className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <p>
           The Connecticut Fair Employment Practices Act (CFEPA) prohibits
           employment discrimination based on race, color, religious creed, age
@@ -31,15 +31,15 @@ function EmployeeDiscrimination() {
         </p>
         <p>
           If you think you may be a victim of employment discrimination,{" "}
-          <Link href="/contact" className="underline hover:no-underline font-bold">
+          <Link href="/contact" className="underline hover:no-underline ">
             please contact us for a confidential consultation.
           </Link>
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <h3
-          className={`${raleway.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
+          className={`${nunitosans.className}  text-primary text-md text-center dark:text-white lg:text-lg`}>
           Age
         </h3>
         <Divider />
@@ -56,9 +56,9 @@ function EmployeeDiscrimination() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <h3
-          className={`${raleway.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
+          className={`${nunitosans.className}  text-primary text-md text-center dark:text-white lg:text-lg`}>
           Gender
         </h3>
         <Divider />
@@ -72,9 +72,9 @@ function EmployeeDiscrimination() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <h3
-          className={`${raleway.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
+          className={`${nunitosans.className}  text-primary text-md text-center dark:text-white lg:text-lg`}>
           Race/Ethnicity
         </h3>
         <Divider />
@@ -102,9 +102,9 @@ function EmployeeDiscrimination() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <h3
-          className={`${raleway.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
+          className={`${nunitosans.className}  text-primary text-md text-center dark:text-white lg:text-lg`}>
           Disability
         </h3>
         <Divider />
@@ -119,9 +119,9 @@ function EmployeeDiscrimination() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <h3
-          className={`${raleway.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
+          className={`${nunitosans.className}  text-primary text-md text-center dark:text-white lg:text-lg`}>
           Pregnancy
         </h3>
         <Divider />
@@ -134,9 +134,9 @@ function EmployeeDiscrimination() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <h3
-          className={`${raleway.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
+          className={`${nunitosans.className}  text-primary text-md text-center dark:text-white lg:text-lg`}>
           Sexual Harassment
         </h3>
         <Divider />
@@ -158,9 +158,9 @@ function EmployeeDiscrimination() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <h3
-          className={`${raleway.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
+          className={`${nunitosans.className}  text-primary text-md text-center dark:text-white lg:text-lg`}>
           Sexual Orientation
         </h3>
         <Divider />
@@ -180,9 +180,9 @@ function EmployeeDiscrimination() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <h3
-          className={`${raleway.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
+          className={`${nunitosans.className}  text-primary text-md text-center dark:text-white lg:text-lg`}>
           Marital Status
         </h3>
         <Divider />
@@ -197,9 +197,9 @@ function EmployeeDiscrimination() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <h3
-          className={`${raleway.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
+          className={`${nunitosans.className}  text-primary text-md text-center dark:text-white lg:text-lg`}>
           Veterans
         </h3>
         <Divider />

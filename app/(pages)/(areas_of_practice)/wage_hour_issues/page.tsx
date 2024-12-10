@@ -1,4 +1,4 @@
-import { raleway } from "@/app/utils/fonts";
+import { nunitosans } from "@/app/utils/fonts";
 import Link from "next/link";
 import React from "react";
 
@@ -6,11 +6,10 @@ function WageHourIssues() {
   return (
     <section className="px-5 flex flex-col gap-10">
       <h1
-        className={`${raleway.className} font-bold text-secondary text-lg text-center dark:text-white lg:text-xl`}>
+        className={`${nunitosans.className}  text-primary text-lg text-center dark:text-white lg:text-xl`}>
         Wage and Hour Issues
       </h1>
-      <div
-        className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <p>
           Employees must be compensated according to wage and hour laws, which
           cover minimum wages, overtime, and meal and rest breaks. Employer
@@ -40,7 +39,7 @@ function WageHourIssues() {
         <p>
           If you have any issues around employer wage and hour policies,
           overtime compensation, or independent contractor classification,{" "}
-          <Link href="/contact" className="underline hover:no-underline font-bold">
+          <Link href="/contact" className="underline hover:no-underline ">
             please call for a confidential consultation about your situation.
           </Link>
         </p>

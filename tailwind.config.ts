@@ -20,15 +20,16 @@ const config = {
     colors: {
       transparent: "transparent",
       white: "#fff",
-      primary: "#41A6FF",
+      primary: "#1F272D",
       secondary: "#0A1F30",
+      accent: "#3DA5D9",
     },
     fontSize: {
       xs: "12px",
       sm: "16px",
-      md: "20px",
-      lg: "32px",
-      xl: "48px",
+      md: "18px",
+      lg: "28px",
+      xl: "38px",
     },
     borderRadius: {
       sm: "10px",

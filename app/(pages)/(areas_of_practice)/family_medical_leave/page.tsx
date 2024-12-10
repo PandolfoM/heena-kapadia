@@ -1,4 +1,4 @@
-import { raleway } from "@/app/utils/fonts";
+import { nunitosans } from "@/app/utils/fonts";
 import Link from "next/link";
 import React from "react";
 
@@ -6,10 +6,10 @@ function FamilyMedicalLeave() {
   return (
     <section className="px-5 flex flex-col gap-10">
       <h1
-        className={`${raleway.className} font-bold text-secondary text-lg text-center dark:text-white lg:text-xl`}>
+        className={`${nunitosans.className}  text-primary text-lg text-center dark:text-white lg:text-xl`}>
         Family Medical Leave Act
       </h1>
-      <div className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <p>
           The Family Medical Leave Act (FMLA) permits qualifying employees to
           take unpaid leave to care for their own or a close family member's
@@ -49,7 +49,7 @@ function FamilyMedicalLeave() {
           discouraged your from taking it, or outright refused it, or if you
           fear your employer might punish you, or your employer has in fact
           punished you for taking it,{" "}
-          <Link href="/contact" className="underline hover:no-underline font-bold">
+          <Link href="/contact" className="underline hover:no-underline ">
             please contact us for a confidential consultation.
           </Link>
         </p>

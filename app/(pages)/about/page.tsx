@@ -2,14 +2,8 @@ import React from "react";
 import heena from "@/app/assets/heena.jpg";
 import carmen from "@/app/assets/carmen.jpg";
 import lynn from "@/app/assets/lynn.jpg";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import SliderCard, { Card } from "@/app/components/slider-card";
-import { raleway } from "@/app/utils/fonts";
+import { nunitosans } from "@/app/utils/fonts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGavel,
@@ -55,26 +49,26 @@ function About() {
     <section className="flex flex-col justify-center items-center gap-[100px] page">
       <div className="flex flex-col justify-center items-start gap-28 w-full">
         <h1
-          className={`${raleway.className} px-5 font-bold text-secondary text-lg text-center dark:text-white lg:text-xl`}>
+          className={`${nunitosans.className} px-5 text-primary text-lg text-center lg:text-xl`}>
           Meet Our Team
         </h1>
-        <div className="w-full flex flex-col gap-1 font-bold text-secondary text-sm bg-primary p-5 md:pl-44 lg:p-10 lg:pl-60">
+        <div className="w-full flex flex-col gap-1 text-primary text-sm bg-primary p-5 md:pl-44 lg:p-10 lg:pl-60">
           <SliderCard cards={CARDS} />
         </div>
 
-        <div className="w-full flex flex-col gap-1 font-bold text-secondary text-sm px-5 lg:gap-[50px]">
+        <div className="w-full flex flex-col gap-1 text-primary text-sm px-5 lg:gap-[50px]">
           <h3
-            className={`${raleway.className} text-md font-bold text-secondary dark:text-white lg:text-xl`}>
+            className={`${nunitosans.className} text-md text-primary lg:text-xl`}>
             Where we Practice
           </h3>
           <section className="flex flex-col lg:flex-row lg:justify-center gap-10 lg:m-auto">
-            <div className="bg-secondary text-white w-full max-w-[375px] m-auto shadow-[0_0_20px_1px] shadow-secondary/50  lg:max-w-none lg:m-0 lg:w-[320px] h-auto rounded-md flex flex-col p-[50px] dark:bg-primary dark:text-white dark:shadow-primary/50">
+            <div className="bg-primary text-white w-full max-w-[375px] m-auto shadow-[0_0_20px_1px] shadow-primary/50  lg:max-w-none lg:m-0 lg:w-[320px] h-auto rounded-md flex flex-col p-[50px]">
               <FontAwesomeIcon icon={faLandmark} size="2x" className="mb-2" />
               <h3
-                className={`${raleway.className} text-lg text-center font-bold leading-[100%] h-32 lg:h-40`}>
+                className={`${nunitosans.className} text-lg text-center leading-[100%] h-32 lg:h-40`}>
                 Courts
               </h3>
-              <div className="text-white/75 font-normal dark:text-white/75">
+              <div className="text-white/75 font-normal">
                 <ul className="list-disc">
                   <li>Connecticut Federal District Court</li>
                   <li>New York Federal District Court</li>
@@ -83,13 +77,13 @@ function About() {
                 </ul>
               </div>
             </div>
-            <div className="bg-secondary text-white w-full max-w-[375px] m-auto shadow-[0_0_20px_1px] shadow-secondary/50 lg:max-w-none lg:w-[320px] h-auto rounded-md flex flex-col p-[50px] dark:bg-primary dark:text-white dark:shadow-primary/50">
+            <div className="bg-primary text-white w-full max-w-[375px] m-auto shadow-[0_0_20px_1px] shadow-primary/50 lg:max-w-none lg:w-[320px] h-auto rounded-md flex flex-col p-[50px]">
               <FontAwesomeIcon icon={faGavel} size="2x" className="mb-2" />
               <h3
-                className={`${raleway.className} text-lg text-center font-bold leading-[100%] h-32 lg:h-40`}>
+                className={`${nunitosans.className} text-lg text-center leading-[100%] h-32 lg:h-40`}>
                 Connecticut Administrative Agencies
               </h3>
-              <div className="text-white/75 font-normal dark:text-white/75">
+              <div className="text-white/75 font-normal">
                 <ul className="list-disc">
                   <li>Commission on Human Rights and Opportunities</li>
                   <li>Department of Labor</li>
@@ -99,13 +93,13 @@ function About() {
                 </ul>
               </div>
             </div>
-            <div className="bg-secondary text-white w-full max-w-[375px] m-auto shadow-[0_0_20px_1px] shadow-secondary/50 lg:max-w-none lg:w-[320px] h-auto rounded-md flex flex-col p-[50px] dark:bg-primary dark:text-white dark:shadow-primary/50">
+            <div className="bg-primary text-white w-full max-w-[375px] m-auto shadow-[0_0_20px_1px] shadow-primary/50 lg:max-w-none lg:w-[320px] h-auto rounded-md flex flex-col p-[50px]">
               <FontAwesomeIcon icon={faShieldAlt} size="2x" className="mb-2" />
               <h3
-                className={`${raleway.className} text-lg text-center font-bold leading-[100%] h-32 lg:h-40`}>
+                className={`${nunitosans.className} text-lg text-center leading-[100%] h-32 lg:h-40`}>
                 Federal Administrative Agencies
               </h3>
-              <div className="text-white/75 font-normal dark:text-white/75">
+              <div className="text-white/75 font-normal">
                 <ul className="list-disc">
                   <li>Equal Employment Opportunities Commission</li>
                   <li>Occupational Safety and Hazard Administration (OSHA)</li>
@@ -115,46 +109,6 @@ function About() {
               </div>
             </div>
           </section>
-          {/* <Accordion type="single" collapsible className="block lg:hidden">
-            <AccordionItem value="courts">
-              <AccordionTrigger>Courts</AccordionTrigger>
-              <AccordionContent>
-                <ul>
-                  <li>Connecticut Federal District Court</li>
-                  <li>New York Federal District Court</li>
-                  <li>Connecticut State Courts</li>
-                  <li>New York State Courts</li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="ct">
-              <AccordionTrigger>
-                Connecticut Administrative Agencies
-              </AccordionTrigger>
-              <AccordionContent>
-                <ul>
-                  <li>Commission on Human Rights and Opportunities</li>
-                  <li>Department of Labor</li>
-                  <li>Freedom of Information Commission</li>
-                  <li>Office of Public Hearings</li>
-                  <li>State Ethics Office</li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="federal">
-              <AccordionTrigger>
-                Federal Administrative Agencies
-              </AccordionTrigger>
-              <AccordionContent>
-                <ul>
-                  <li>Equal Employment Opportunities Commission</li>
-                  <li>Occupational Safety and Hazard Administration (OSHA)</li>
-                  <li>Office of Administrative Law Judges</li>
-                  <li>Office of Civil Rights</li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion> */}
         </div>
       </div>
     </section>

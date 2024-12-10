@@ -1,18 +1,18 @@
 import Divider from "@/app/components/divider";
-import { raleway } from "@/app/utils/fonts";
+import { nunitosans } from "@/app/utils/fonts";
 import React from "react";
 
 function OtherPractices() {
   return (
     <section className="px-5 flex flex-col gap-10">
       <h1
-        className={`${raleway.className} font-bold text-secondary text-lg text-center dark:text-white lg:text-xl`}>
+        className={`${nunitosans.className}  text-primary text-lg text-center dark:text-white lg:text-xl`}>
         Other Areas of Practice
       </h1>
 
-      <div className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <h3
-          className={`${raleway.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
+          className={`${nunitosans.className}  text-primary text-md text-center dark:text-white lg:text-lg`}>
           Wrongful Termination
         </h3>
         <Divider />
@@ -26,9 +26,9 @@ function OtherPractices() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <h3
-          className={`${raleway.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
+          className={`${nunitosans.className}  text-primary text-md text-center dark:text-white lg:text-lg`}>
           Contract/Severance Negotiation
         </h3>
         <Divider />
@@ -50,9 +50,9 @@ function OtherPractices() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <h3
-          className={`${raleway.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
+          className={`${nunitosans.className}  text-primary text-md text-center dark:text-white lg:text-lg`}>
           Workers' Compensation Retaliation
         </h3>
         <Divider />
@@ -68,9 +68,9 @@ function OtherPractices() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 text-secondary dark:text-white">
+      <div className="flex flex-col gap-2 text-primary dark:text-white">
         <h3
-          className={`${raleway.className} font-bold text-secondary text-md text-center dark:text-white lg:text-lg`}>
+          className={`${nunitosans.className}  text-primary text-md text-center dark:text-white lg:text-lg`}>
           Mediation
         </h3>
         <Divider />
