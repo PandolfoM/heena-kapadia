@@ -1,8 +1,9 @@
 "use client";
 
+import ReCAPTCHA from "react-google-recaptcha";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useRef, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import {
@@ -17,15 +18,24 @@ import { useForm } from "react-hook-form";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { nunitosans } from "../../utils/fonts";
+import axios from "axios";
+import Loader from "@/app/components/loader";
 
 const appFormSchema = z.object({
   name: z.string().min(1, { message: "Required" }),
   email: z.string().email(),
-  phone: z.string().min(1, { message: "Required" }),
+  phone: z
+    .string()
+    .regex(/^\d+$/, { message: "Invalid phone number" })
+    .min(10, { message: "Phone number must be at least 10 digits" })
+    .max(10, { message: "Phone number must be at most 10 digits" }),
   message: z.string().min(1, { message: "Required" }),
 });
 
 function Contact() {
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [msgSent, setMsgSent] = useState<boolean>(false);
   const appForm = useForm<z.infer<typeof appFormSchema>>({
     resolver: zodResolver(appFormSchema),
     defaultValues: {
@@ -36,8 +46,23 @@ function Contact() {
     },
   });
 
-  const onSubmit = (data: z.infer<typeof appFormSchema>) => {
-    console.log(data);
+  const onSubmit = async (data: z.infer<typeof appFormSchema>) => {
+    setLoading(true);
+    const res = await axios.post("/api/emails/contact", data);
+    if (res.data.success) {
+      appForm.reset();
+      setLoading(false);
+      setMsgSent(true);
+      setTimeout(() => {
+        setMsgSent(false);
+      }, 2000);
+    } else {
+      appForm.setError("root", {
+        type: "manual",
+        message: "An error occurred. Please try again.",
+      });
+      setLoading(false);
+    }
   };
 
   return (
@@ -85,7 +110,7 @@ function Contact() {
                     <FormControl>
                       <Input placeholder="Name" {...field} />
                     </FormControl>
-                    <FormMessage className="text-xs" />
+                    <FormMessage className="text-xs text-error" />
                   </FormItem>
                 )}
               />
@@ -97,7 +122,7 @@ function Contact() {
                     <FormControl>
                       <Input placeholder="Email" {...field} />
                     </FormControl>
-                    <FormMessage className="text-xs" />
+                    <FormMessage className="text-xs text-error" />
                   </FormItem>
                 )}
               />
@@ -107,9 +132,19 @@ function Contact() {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input placeholder="Phone Number" {...field} />
+                      <Input
+                        placeholder="Phone Number"
+                        {...field}
+                        onInput={(e) => {
+                          e.currentTarget.value = e.currentTarget.value.replace(
+                            /\D/g,
+                            ""
+                          );
+                        }}
+                        maxLength={10}
+                      />
                     </FormControl>
-                    <FormMessage className="text-xs" />
+                    <FormMessage className="text-xs text-error" />
                   </FormItem>
                 )}
               />
@@ -121,12 +156,25 @@ function Contact() {
                     <FormControl>
                       <Textarea placeholder="Message" rows={5} {...field} />
                     </FormControl>
-                    <FormMessage className="text-xs" />
+                    <FormMessage className="text-xs text-error" />
                   </FormItem>
                 )}
               />
+              {appForm.formState.errors.root && (
+                <p className="text-xs text-error">
+                  {appForm.formState.errors.root.message}
+                </p>
+              )}
+              {msgSent && (
+                <p className="text-xs">Your message has been sent.</p>
+              )}
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+                size="invisible"
+              />
               <Button className="w-full mt-[15px]" type="submit">
-                Submit
+                {loading ? <Loader className="bg-white w-3 h-3" /> : "Submit"}
               </Button>
             </form>
           </Form>

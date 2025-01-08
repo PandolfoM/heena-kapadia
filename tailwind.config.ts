@@ -23,6 +23,7 @@ const config = {
       primary: "#1F272D",
       secondary: "#0A1F30",
       accent: "#3DA5D9",
+      error: "#790505",
     },
     fontSize: {
       xs: "12px",
