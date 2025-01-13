@@ -10,7 +10,7 @@ const contact = async (req: NextRequest): Promise<NextResponse> => {
   try {
     const { data, error } = await resend.emails.send({
       from: "Heena Kapadia<heenakapdia@mjphub.com>",
-      to: "hkapadia@heenakapadia.com", //hkapadia@heenakapadia.com
+      to: "hkapadia@heenakapadialaw.com", //hkapadia@heenakapadialaw.com
       subject: "New Client Inquiry",
       react: ContactEmail({ name, email, phone, message }),
       text: `New Client Inquiry\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
