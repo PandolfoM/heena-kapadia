@@ -116,11 +116,7 @@ function Footer() {
       </section>
       <section className="m-auto text-sm pt-5 pb-5 text-primary/50 dark:text-white/50 flex gap-2">
         <p>
-          © 2024 HeenaKapadiaLaw. All Rights Reserved. |{" "}
-          <br className="block sm:hidden" />
-          <Link href="/disclaimer" className="underline hover:no-underline">
-            Legal Disclaimer
-          </Link>
+          © 2024 HeenaKapadiaLaw. All Rights Reserved.
         </p>
       </section>
     </footer>
