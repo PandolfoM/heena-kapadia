@@ -47,8 +47,13 @@ function Contact() {
   });
 
   const onSubmit = async (data: z.infer<typeof appFormSchema>) => {
+    const recaptchaResponse = await recaptchaRef.current?.executeAsync();
+    recaptchaRef.current?.reset();
     setLoading(true);
-    const res = await axios.post("/api/emails/contact", data);
+    const res = await axios.post("/api/emails/contact", {
+      ...data,
+      recaptchaResponse,
+    });
     if (res.data.success) {
       appForm.reset();
       setLoading(false);
