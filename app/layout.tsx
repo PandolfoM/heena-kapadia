@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://heenakapadialaw.co/og.png",
+        url: "https://heenakapadialaw.com/og.png",
         width: 1200,
         height: 630,
         alt: "Heena Kapadia",
