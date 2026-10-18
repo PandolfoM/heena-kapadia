@@ -43,7 +43,9 @@ const DialogContent = React.forwardRef<
       )}
       {...props}>
       {children}
-      <DialogPrimitive.Close>
+      {/* asChild: Close lends its behaviour to Button instead of wrapping it
+          in a second <button>, which is invalid HTML and breaks hydration. */}
+      <DialogPrimitive.Close asChild>
         <Button className="w-full">Close</Button>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
