@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  env: {
-    RESEND_API_KEY: process.env.RESEND_API_KEY,
-    NEXT_PUBLIC_RECAPTCHA_SITE_KEY: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
-    RECAPTCHA_SECRET: process.env.RECAPTCHA_SECRET,
-  },
+  // Static HTML in out/, served from S3 + CloudFront by MJP Hub. The contact
+  // form sends through MJP Hub's /api/emails/send, so there is no API here.
+  output: "export",
+  // Image optimization needs a server; images are served as-is.
+  images: { unoptimized: true },
 };
 
 export default nextConfig;

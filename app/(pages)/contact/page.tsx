@@ -1,6 +1,6 @@
 "use client";
 
-import ReCAPTCHA from "react-google-recaptcha";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useRef, useState } from "react";
@@ -18,7 +18,7 @@ import { useForm } from "react-hook-form";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { nunitosans } from "../../utils/fonts";
-import axios from "axios";
+import { sendEmail } from "@/lib/send-email";
 import Loader from "@/app/components/loader";
 
 const appFormSchema = z.object({
@@ -33,7 +33,8 @@ const appFormSchema = z.object({
 });
 
 function Contact() {
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const turnstile = useRef<TurnstileInstance>(null);
+  const [captchaToken, setCaptchaToken] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [msgSent, setMsgSent] = useState<boolean>(false);
   const appForm = useForm<z.infer<typeof appFormSchema>>({
@@ -47,16 +48,45 @@ function Contact() {
   });
 
   const onSubmit = async (data: z.infer<typeof appFormSchema>) => {
-    const recaptchaResponse = await recaptchaRef.current?.executeAsync();
-    recaptchaRef.current?.reset();
+    if (!captchaToken) {
+      appForm.setError("root", {
+        type: "manual",
+        message: "Please wait for the security check to finish.",
+      });
+      return;
+    }
     setLoading(true);
-    const res = await axios.post("/api/emails/contact", {
-      ...data,
-      recaptchaResponse,
-    });
-    if (res.data.success) {
+    let ok = false;
+    try {
+      // Sent through MJP Hub, which checks the Turnstile token.
+      const res = await sendEmail({
+        from: "Heena Kapadia",
+        to: "hkapadia@heenakapadialaw.com",
+        subject: "New Client Inquiry",
+        emailProps: {
+          Name: data.name,
+          Email: data.email,
+          Phone: data.phone,
+          Message: data.message,
+        },
+        text: `New Client Inquiry
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+Message: ${data.message}`,
+        captchaToken,
+      });
+      ok = res.ok;
+    } catch {
+      ok = false;
+    }
+    // Tokens work once; get a fresh one for the next message.
+    setCaptchaToken("");
+    turnstile.current?.reset();
+    setLoading(false);
+
+    if (ok) {
       appForm.reset();
-      setLoading(false);
       setMsgSent(true);
       setTimeout(() => {
         setMsgSent(false);
@@ -66,7 +96,6 @@ function Contact() {
         type: "manual",
         message: "An error occurred. Please try again.",
       });
-      setLoading(false);
     }
   };
 
@@ -106,7 +135,7 @@ function Contact() {
           <Form {...appForm}>
             <form
               onSubmit={appForm.handleSubmit(onSubmit)}
-              className="w-full flex flex-col gap-[5px] lg:min-w-[30rem]">
+              className="w-full flex flex-col gap-[5px] lg:min-w-120">
               <FormField
                 control={appForm.control}
                 name="name"
@@ -173,10 +202,13 @@ function Contact() {
               {msgSent && (
                 <p className="text-xs">Your message has been sent.</p>
               )}
-              <ReCAPTCHA
-                ref={recaptchaRef}
-                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-                size="invisible"
+              <Turnstile
+                ref={turnstile}
+                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                onSuccess={setCaptchaToken}
+                onExpire={() => setCaptchaToken("")}
+                onError={() => setCaptchaToken("")}
+                options={{ size: "flexible" }}
               />
               <Button className="w-full mt-[15px]" type="submit">
                 {loading ? <Loader className="bg-white w-3 h-3" /> : "Submit"}

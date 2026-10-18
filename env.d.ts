@@ -1,7 +1,7 @@
 declare namespace NodeJS {
   interface ProcessEnv {
-    RESEND_API_KEY: string;
-    NEXT_PUBLIC_RECAPTCHA_SITE_KEY: string;
-    RECAPTCHA_SECRET: string;
+    // Cloudflare Turnstile site key for the contact form. The secret lives in
+    // MJP Hub, whose /api/emails/send checks the token.
+    NEXT_PUBLIC_TURNSTILE_SITE_KEY: string;
   }
 }

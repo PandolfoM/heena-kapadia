@@ -23,7 +23,7 @@ function SliderCard({ cards }: Props) {
       {cards.map((card, i) => (
         <div
           key={i}
-          className="relative m-auto bg-white p-6 pt-40 rounded-sm duration-300 transition-all w-full md:rounded-md md:bg-clip-padding md:border-[10px] md:border-white/25 md:pt-20">
+          className="relative m-auto bg-white p-6 pt-40 rounded-sm duration-300 transition-all w-full md:rounded-md md:bg-clip-padding md:border-10 md:border-white/25 md:pt-20">
           <Image
             src={card.image}
             alt=""
@@ -47,7 +47,7 @@ function SliderCard({ cards }: Props) {
               </Button>
             </ReadMoreDialog>
           </div>
-          <div className="swiper-pagination z-10 text-center !absolute !top-[37%] h-fit select-none flex justify-center gap-1 md:flex-col md:!right-5 md:!top-[45%] md:!bottom-auto md:!left-auto md:!w-fit"></div>
+          <div className="swiper-pagination z-10 text-center absolute! top-[37%]! h-fit select-none flex justify-center gap-1 md:flex-col md:right-5! md:top-[45%]! md:bottom-auto! md:left-auto! md:w-fit!"></div>
         </div>
       ))}
     </div>

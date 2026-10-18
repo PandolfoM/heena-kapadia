@@ -1,5 +1,6 @@
 "use client";
 
+import "../utils/fontawesome";
 import React, { useEffect, useState } from "react";
 import { nunitosans } from "../utils/fonts";
 import logo from "@/app/assets/logo.png";

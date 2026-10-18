@@ -15,9 +15,9 @@ export default function Home() {
   return (
     <>
       <section className="flex flex-col justify-center items-center skipFirst">
-        <div className="relative flex flex-col justify-center items-center gap-5 px-5 w-full h-[30rem] z-0">
+        <div className="relative flex flex-col justify-center items-center gap-5 px-5 w-full h-120 z-0">
           <div className="absolute inset-0 bg-[url('/hero.jpg')] bg-no-repeat bg-cover bg-center z-0" />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-primary/10 z-10" />
+          <div className="absolute inset-0 bg-linear-to-t from-primary/70 to-primary/10 z-10" />
           <div className="relative z-20 flex flex-col justify-center items-center gap-5 px-5">
             <h1
               className={`${nunitosans.className}  text-lg text-center text-white lg:text-xl`}>
@@ -52,10 +52,10 @@ export default function Home() {
           {/* <Image
             alt=""
             src={lawBalance}
-            className="absolute top-0 bottom-0 left-1/2 -translate-y-5 -translate-x-1/2 lg:left-0 lg:translate-x-full lg:top-1/2 lg:-translate-y-1/2 2xl:right-1/2 2xl:left-1/2 2xl:-translate-x-[70%]"
+            className="absolute top-0 bottom-0 left-1/2 -translate-y-5 -translate-x-1/2 lg:left-0 lg:translate-x-full lg:top-1/2 lg:-translate-y-1/2 2xl:right-1/2 2xl:left-1/2 2xl:translate-x-[-70%]"
           /> */}
           <div className="w-[85%] h-auto absolute top-1/2 right-1/2 left-1/2 translate-y-20 -translate-x-1/2 rounded-md text-center bg-clip-padding sm:w-[70%] md:w-1/2 lg:right-0 lg:translate-x-1/3 lg:-translate-y-1/4 lg:w-[375px] xl:w-[440px] 2xl:translate-x-1/2">
-            <div className="bg-[#F2F2F2] p-5 rounded-md bg-clip-padding border-[10px] border-white/25 h-full w-full">
+            <div className="bg-[#F2F2F2] p-5 rounded-md bg-clip-padding border-10 border-white/25 h-full w-full">
               <h4 className="text-primary text-lg">Successes</h4>
               <p className="text-primary text-sm lg:text-md">$1,800,000</p>
               <p className="text-primary text-sm lg:text-md">

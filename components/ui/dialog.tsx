@@ -21,7 +21,7 @@ const DialogOverlay = React.forwardRef<
   <DialogPrimitive.Overlay
     ref={ref}
     className={cn(
-      "fixed inset-0 z-50 bg-white/80 backdrop-blur data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 dark:bg-secondary/80",
+      "fixed inset-0 z-50 bg-white/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 dark:bg-secondary/80",
       className
     )}
     {...props}
@@ -38,7 +38,7 @@ const DialogContent = React.forwardRef<
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed h-auto max-h-[700px] flex flex-col w-[95%] left-[50%] top-[50%] z-50 max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 bg-white p-6 shadow-[0_0_20px_1px] shadow-primary/50 duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] rounded-sm lg:rounded-md text-secondary/75 dark:text-white/75 dark:bg-secondary",
+        "fixed h-auto max-h-[700px] flex flex-col w-[95%] left-[50%] top-[50%] z-50 max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 bg-white p-6 shadow-[0_0_20px_1px] shadow-primary/50 duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 rounded-sm lg:rounded-md text-secondary/75 dark:text-white/75 dark:bg-secondary",
         className
       )}
       {...props}>

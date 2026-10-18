@@ -66,7 +66,7 @@ export default function RootLayout({
       <body
         className={`${nunitosans.className} h-full w-full m-0 p-0 overflow-hidden flex flex-col relative bg-[#ececec] dark:bg-secondary dark:text-white`}>
         <Navbar />
-        <main className="h-full overflow-y-auto flex-grow">
+        <main className="h-full overflow-y-auto grow">
           {children}
           <Footer />
         </main>
