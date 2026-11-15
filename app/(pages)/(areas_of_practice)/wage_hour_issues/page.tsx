@@ -1,5 +1,5 @@
 import { nunitosans } from "@/app/utils/fonts";
-import Link from "next/link";
+import { Link } from "react-router";
 import React from "react";
 
 function WageHourIssues() {
@@ -39,7 +39,7 @@ function WageHourIssues() {
         <p>
           If you have any issues around employer wage and hour policies,
           overtime compensation, or independent contractor classification,{" "}
-          <Link href="/contact" className="underline hover:no-underline ">
+          <Link to="/contact" className="underline hover:no-underline ">
             please call for a confidential consultation about your situation.
           </Link>
         </p>

@@ -1,15 +1,13 @@
 import React from "react";
-import Image from "next/image";
 import super_lawyer from "@/app/assets/super_lawyer.png";
 import logo_dark from "@/app/assets/logo_dark.png";
-import Link from "next/link";
 
 function Footer() {
   return (
     <footer className="w-full flex flex-col items-start justify-end text-primary mt-60 bg-primary/5">
       <section className="px-5 pb-5 pt-10 relative w-fit m-auto md:flex md:flex-row md:gap-32 md:justify-center md:items-start">
         <div className="pb-10 md:pb-0 relative">
-          <Image
+          <img
             src={logo_dark}
             alt="heena kapadia dark logo"
             className="block w-[250px] md:w-[300px]"
@@ -35,17 +33,17 @@ function Footer() {
           </a>
         </div>
 
-        <Link
+        <a
           href="https://profiles.superlawyers.com/connecticut/trumbull/lawyer/heena-kapadia/ad5c03f6-71fa-47b0-b7ba-5194c5225981.html"
           target="_blank"
           className="flex self-end">
-          <Image
+          <img
             src={super_lawyer}
             alt="rated by super lawyer"
             width={100}
             className="pt-5 sm:p-0"
           />
-        </Link>
+        </a>
       </section>
       <section className="m-auto text-sm pt-5 pb-5 text-primary/50 flex gap-2">
         <p>

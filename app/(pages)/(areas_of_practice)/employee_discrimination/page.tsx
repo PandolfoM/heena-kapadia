@@ -1,6 +1,6 @@
 import Divider from "@/app/components/divider";
 import { nunitosans } from "@/app/utils/fonts";
-import Link from "next/link";
+import { Link } from "react-router";
 import React from "react";
 
 function EmployeeDiscrimination() {
@@ -31,7 +31,7 @@ function EmployeeDiscrimination() {
         </p>
         <p>
           If you think you may be a victim of employment discrimination,{" "}
-          <Link href="/contact" className="underline hover:no-underline ">
+          <Link to="/contact" className="underline hover:no-underline ">
             please contact us for a confidential consultation.
           </Link>
         </p>

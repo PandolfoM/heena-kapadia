@@ -1,27 +1,18 @@
-"use client";
-
 import "../utils/fontawesome";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { nunitosans } from "../utils/fonts";
 import logo from "@/app/assets/logo.png";
-import logo_dark from "@/app/assets/logo_dark.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, useLocation } from "react-router";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isPracticeOpen, setIsPracticeOpen] = useState<boolean>(false);
-  const [currentPath, setCurrentPath] = useState<string>("");
-  const pathname = usePathname();
-
-  useEffect(() => {
-    setCurrentPath(pathname.replace("/", ""));
-  }, [pathname]);
+  const { pathname } = useLocation();
+  const currentPath = pathname.replace("/", "");
 
   const handleClick = () => {
     toggleMenu();
@@ -47,14 +38,14 @@ function Navbar() {
   return (
     <nav className="flex flex-col justify-center items-center px-5 bg-primary text-white w-full z-10 shadow-[0_0_20px_1px] shadow-primary/80 border-b border-primary/20">
       <div className="w-full flex items-center justify-between relative lg:justify-center h-navMobile sm:h-nav ">
-        <Link href="/" className="lg:absolute lg:left-10 xl:left-40 lg:text-lg">
-          <Image
+        <Link to="/" className="lg:absolute lg:left-10 xl:left-40 lg:text-lg">
+          <img
             src={logo}
             alt="heena kapadia logo"
             width={200}
             className="hidden dark:block"
           />
-          <Image
+          <img
             src={logo}
             alt="heena kapadia dark logo"
             width={200}
@@ -64,7 +55,7 @@ function Navbar() {
         <div
           className={`${nunitosans.className} gap-2 justify-center hidden lg:flex lg:text-md`}>
           <Link
-            href="/"
+            to="/"
             className={cn(
               currentPath === "" && "bg-primary/20",
               "px-3 py-1 transition-all ease-in-out duration-300 rounded-sm hover:bg-primary/50"
@@ -72,7 +63,7 @@ function Navbar() {
             Home
           </Link>
           <Link
-            href="/contact"
+            to="/contact"
             className={cn(
               currentPath === "contact" && "bg-primary/20",
               "px-3 py-1 transition-all ease-in-out duration-300 rounded-sm hover:bg-primary/50"
@@ -80,7 +71,7 @@ function Navbar() {
             Contact
           </Link>
           <Link
-            href="/about"
+            to="/about"
             className={cn(
               currentPath === "about" && "bg-primary/20",
               "px-3 py-1 transition-all ease-in-out duration-300 rounded-sm hover:bg-primary/50"
@@ -108,7 +99,7 @@ function Navbar() {
             <div className="absolute w-max h-fit text-white top-8 pt-1 text-sm z-50 hidden group-hover:block">
               <div className="bg-primary p-2 rounded-sm dark:bg-primary flex flex-col gap-2">
                 <Link
-                  href="/employee_discrimination"
+                  to="/employee_discrimination"
                   className={cn(
                     "cursor-pointer hover:bg-primary/50 rounded-sm p-2",
                     currentPath === "employee_discrimination" &&
@@ -117,7 +108,7 @@ function Navbar() {
                   Employment Discrimination
                 </Link>
                 <Link
-                  href="/whistleblower"
+                  to="/whistleblower"
                   className={cn(
                     "cursor-pointer hover:bg-primary/50 rounded-sm p-2",
                     currentPath === "whistleblower" &&
@@ -126,7 +117,7 @@ function Navbar() {
                   Whistleblower Retaliation
                 </Link>
                 <Link
-                  href="/wage_hour_issues"
+                  to="/wage_hour_issues"
                   className={cn(
                     "cursor-pointer hover:bg-primary/50 rounded-sm p-2",
                     currentPath === "wage_hour_issues" &&
@@ -135,7 +126,7 @@ function Navbar() {
                   Wage and Hour Issues
                 </Link>
                 <Link
-                  href="/family_medical_leave"
+                  to="/family_medical_leave"
                   className={cn(
                     "cursor-pointer hover:bg-primary/50 rounded-sm p-2",
                     currentPath === "family_medical_leave" &&
@@ -144,7 +135,7 @@ function Navbar() {
                   Family Medical Leave Act
                 </Link>
                 <Link
-                  href="/other_practices"
+                  to="/other_practices"
                   className={cn(
                     "cursor-pointer hover:bg-primary/50 rounded-sm p-2 pb-2",
                     currentPath === "other_practices" &&
@@ -176,7 +167,7 @@ function Navbar() {
             animate={{ height: "auto" }}
             exit={{ height: 0, transition: { delay: 0.4 } }}
             className="flex flex-col text-center text-md text-white dark:text-white">
-            <Link href="/" onClick={handleClick}>
+            <Link to="/" onClick={handleClick}>
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -186,7 +177,7 @@ function Navbar() {
                 Home
               </motion.p>
             </Link>
-            <Link href="/contact" onClick={handleClick}>
+            <Link to="/contact" onClick={handleClick}>
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -197,7 +188,7 @@ function Navbar() {
               </motion.p>
             </Link>
 
-            <Link href="/about" onClick={handleClick}>
+            <Link to="/about" onClick={handleClick}>
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -231,7 +222,7 @@ function Navbar() {
                   animate={{ height: "auto" }}
                   exit={{ height: 0, transition: { delay: 0.4 } }}
                   className="flex flex-col gap-2 text-center text-sm text-white dark:text-white">
-                  <Link href="/employee_discrimination" onClick={handleClick}>
+                  <Link to="/employee_discrimination" onClick={handleClick}>
                     <motion.p
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -246,7 +237,7 @@ function Navbar() {
                       Employment Discrimination
                     </motion.p>
                   </Link>
-                  <Link href="/whistleblower" onClick={handleClick}>
+                  <Link to="/whistleblower" onClick={handleClick}>
                     <motion.p
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -260,7 +251,7 @@ function Navbar() {
                       Whistleblower Retaliation
                     </motion.p>
                   </Link>
-                  <Link href="/wage_hour_issues" onClick={handleClick}>
+                  <Link to="/wage_hour_issues" onClick={handleClick}>
                     <motion.p
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -274,7 +265,7 @@ function Navbar() {
                       Wage and Hour Issues
                     </motion.p>
                   </Link>
-                  <Link href="/family_medical_leave" onClick={handleClick}>
+                  <Link to="/family_medical_leave" onClick={handleClick}>
                     <motion.p
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -288,7 +279,7 @@ function Navbar() {
                       Family Medical Leave Act
                     </motion.p>
                   </Link>
-                  <Link href="/other_practices" onClick={handleClick}>
+                  <Link to="/other_practices" onClick={handleClick}>
                     <motion.p
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}

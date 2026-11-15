@@ -1,76 +1,26 @@
-import type { Metadata, Viewport } from "next";
-import "./globals.css";
-import { nunitosans } from "./utils/fonts";
+import { useEffect, useRef } from "react";
+import { Outlet, useLocation } from "react-router";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 
-export const metadata: Metadata = {
-  title: "Heena Kapadia",
-  description: "Law office of Heena Kapadia",
-  openGraph: {
-    title: "Heena Kapadia",
-    description: "Law office of Heena Kapadia",
-    type: "website",
-    url: "https://heenakapadialaw.com/",
-    siteName: "Heena Kapadia",
-    locale: "en_US",
-    images: [
-      {
-        url: "https://heenakapadialaw.com/og.png",
-        width: 1200,
-        height: 630,
-        alt: "Heena Kapadia",
-      },
-    ],
-  },
-  twitter: {
-    title: "Heena Kapadia",
-    description: "Law office of Heena Kapadia",
-    images: [
-      {
-        url: "https://heenakapadialaw.com/og.png",
-        width: 1200,
-        height: 630,
-        alt: "Heena Kapadia",
-      },
-    ],
-  },
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-icon.png",
-  },
-  applicationName: "Heena Kapadia",
-  appleWebApp: {
-    title: "Heena Kapadia",
-    statusBarStyle: "default",
-    capable: true,
-  },
-};
+// Wraps every page. The page's <head> (title, share tags, icons) is static,
+// in index.html.
+export default function RootLayout() {
+  const main = useRef<HTMLElement>(null);
+  const { pathname } = useLocation();
 
-export const viewport: Viewport = {
-  themeColor: "#1f272d",
-  colorScheme: "light",
-  maximumScale: 1,
-  initialScale: 1,
-  width: "device-width",
-  viewportFit: "cover",
-};
+  // Pages scroll inside <main>, not the window, so start each page at the top.
+  useEffect(() => {
+    main.current?.scrollTo(0, 0);
+  }, [pathname]);
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
   return (
-    <html lang="en" className="h-full w-full m-0 p-0 overflow-hidden">
-      <body
-        className={`${nunitosans.className} h-full w-full m-0 p-0 overflow-hidden flex flex-col relative bg-[#ececec] dark:bg-secondary dark:text-white`}>
-        <Navbar />
-        <main className="h-full overflow-y-auto grow">
-          {children}
-          <Footer />
-        </main>
-      </body>
-    </html>
+    <>
+      <Navbar />
+      <main ref={main} className="h-full overflow-y-auto grow">
+        <Outlet />
+        <Footer />
+      </main>
+    </>
   );
 }

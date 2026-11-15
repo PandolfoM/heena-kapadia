@@ -1,5 +1,5 @@
 import { nunitosans } from "@/app/utils/fonts";
-import Link from "next/link";
+import { Link } from "react-router";
 import React from "react";
 
 function FamilyMedicalLeave() {
@@ -49,7 +49,7 @@ function FamilyMedicalLeave() {
           discouraged your from taking it, or outright refused it, or if you
           fear your employer might punish you, or your employer has in fact
           punished you for taking it,{" "}
-          <Link href="/contact" className="underline hover:no-underline ">
+          <Link to="/contact" className="underline hover:no-underline ">
             please contact us for a confidential consultation.
           </Link>
         </p>
