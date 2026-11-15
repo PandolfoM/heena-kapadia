@@ -21,7 +21,7 @@ import Loader from "@/app/components/loader";
 
 const appFormSchema = z.object({
   name: z.string().min(1, { message: "Required" }),
-  email: z.string().email(),
+  email: z.email(),
   phone: z
     .string()
     .regex(/^\d+$/, { message: "Invalid phone number" })
