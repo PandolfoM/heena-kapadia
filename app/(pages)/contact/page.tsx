@@ -1,5 +1,3 @@
-"use client";
-
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -23,7 +21,7 @@ import Loader from "@/app/components/loader";
 
 const appFormSchema = z.object({
   name: z.string().min(1, { message: "Required" }),
-  email: z.string().email(),
+  email: z.email(),
   phone: z
     .string()
     .regex(/^\d+$/, { message: "Invalid phone number" })
@@ -134,6 +132,8 @@ Message: ${data.message}`,
         <section className="w-full flex">
           <Form {...appForm}>
             <form
+              // react-hook-form returns a submit handler; it reads no ref during render.
+              // eslint-disable-next-line react-hooks/refs
               onSubmit={appForm.handleSubmit(onSubmit)}
               className="w-full flex flex-col gap-[5px] lg:min-w-120">
               <FormField
@@ -204,7 +204,7 @@ Message: ${data.message}`,
               )}
               <Turnstile
                 ref={turnstile}
-                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
                 onSuccess={setCaptchaToken}
                 onExpire={() => setCaptchaToken("")}
                 onError={() => setCaptchaToken("")}

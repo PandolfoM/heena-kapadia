@@ -1,6 +1,6 @@
 import Divider from "@/app/components/divider";
 import { nunitosans } from "@/app/utils/fonts";
-import Link from "next/link";
+import { Link } from "react-router";
 import React from "react";
 
 function Whistleblower() {
@@ -25,7 +25,7 @@ function Whistleblower() {
         </p>
         <p>
           If you're a whistleblower concerned about retaliation,{" "}
-          <Link href="/contact" className="underline hover:no-underline ">
+          <Link to="/contact" className="underline hover:no-underline ">
             please contact us for a confidential consultation.
           </Link>
         </p>

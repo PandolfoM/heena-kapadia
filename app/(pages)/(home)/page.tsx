@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Link } from "react-router";
 import { nunitosans } from "@/app/utils/fonts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -31,7 +31,7 @@ export default function Home() {
               <br className="hidden lg:block" /> resources to protecting and
               advocating for you in these often-difficult situations.
             </p>
-            <Link href="/contact">
+            <Link to="/contact">
               <Button className="bg-primary ">Get Started</Button>
             </Link>
           </div>
@@ -94,19 +94,19 @@ export default function Home() {
             </span>
             <div className="flex flex-col items-center text-white w-[87%] m-auto gap-[10px] sm:w-auto md:grid md:grid-cols-2 lg:w-[55%] xl:whitespace-nowrap xl:justify-items-start xl:m-0 ">
               <Link
-                href="/employee_discrimination"
+                to="/employee_discrimination"
                 className="cursor-pointer w-full  text-sm flex gap-2 justify-start items-center rounded-md py-2 px-2">
                 <FontAwesomeIcon icon={faUserTie} size="2x" className="w-10" />
                 Employment Discrimination
               </Link>
               <Link
-                href="/whistleblower"
+                to="/whistleblower"
                 className="cursor-pointer w-full  text-sm flex gap-2 justify-start items-center rounded-md py-2 px-2">
                 <FontAwesomeIcon icon={faWind} size="2x" className="w-10" />
                 Whistleblower Retaliation
               </Link>
               <Link
-                href="/wage_hour_issues"
+                to="/wage_hour_issues"
                 className="cursor-pointer w-full  text-sm flex gap-2 justify-start items-center rounded-md py-2 px-2">
                 <FontAwesomeIcon
                   icon={faMoneyCheck}
@@ -116,7 +116,7 @@ export default function Home() {
                 Wage and Hour Issues
               </Link>
               <Link
-                href="/family_medical_leave"
+                to="/family_medical_leave"
                 className="cursor-pointer w-full  text-sm flex gap-2 justify-start items-center rounded-md py-2 px-2">
                 <FontAwesomeIcon
                   icon={faBriefcaseMedical}
@@ -126,13 +126,13 @@ export default function Home() {
                 Family Medical Leave Act
               </Link>
               <Link
-                href="/other_practices"
+                to="/other_practices"
                 className="cursor-pointer w-full  text-sm flex gap-2 justify-start items-center rounded-md py-2 px-2">
                 <FontAwesomeIcon icon={faGavel} size="2x" className="w-10" />
                 Wrongful Termination
               </Link>
               <Link
-                href="/other_practices"
+                to="/other_practices"
                 className="cursor-pointer w-full  text-sm flex gap-2 justify-start items-center rounded-md py-2 px-2 whitespace-break-spaces">
                 <FontAwesomeIcon
                   icon={faFileContract}

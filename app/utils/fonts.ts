@@ -1,3 +1,4 @@
-import { Nunito_Sans } from "next/font/google";
-
-export const nunitosans = Nunito_Sans({ subsets: ["latin"], weight: "200" });
+// Nunito Sans, as a class. The face (from @fontsource-variable/nunito-sans)
+// and the class are defined in globals.css; this keeps the
+// `${nunitosans.className}` call sites unchanged.
+export const nunitosans = { className: "font-nunitosans" };
